@@ -4,7 +4,7 @@ import { navLinksData } from "@/mocks/navlinks";
 
 const Header = () => {
   return (
-    <header className="py-8 md:py-10 lg:py-12 uppercase bg-black text-white">
+    <header className="absolute top-0 w-full z-10 py-8 md:py-10 lg:py-12 uppercase bg-black text-white">
       <div className="container mx-auto flex justify-between items-center px-8 sm:px-14 md:px-16 xl:px-0">
         <Link
           href="/"
@@ -27,7 +27,7 @@ const Header = () => {
           {navLinksData.map(({ id, title, href }) => (
             <Link
               key={id}
-              className="lg:text-lg font-semibold py-1 lg:py-2 tracking-wider hover:border-b-2 border-rose-400 transition duration-300"
+              className="lg:text-lg font-semibold py-1 lg:py-2 tracking-wider hover:border-b-2 hover:text-gega-melon border-rose-400 transition duration-300"
               href={href}
             >
               {title}
