@@ -2,6 +2,33 @@ import { IoIosMail } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaSchool, FaPhoneAlt, FaRegUser, FaCalendar } from "react-icons/fa";
 
+export const aboutSkillsData = [
+  {
+    title: "react",
+    ratio: 60,
+  },
+  {
+    title: "HTML/CSS",
+    ratio: 65,
+  },
+  {
+    title: "Javascript",
+    ratio: 85,
+  },
+  {
+    title: "Next.js",
+    ratio: 50,
+  },
+  {
+    title: "Tailwind",
+    ratio: 80,
+  },
+  {
+    title: "MsSql",
+    ratio: 75,
+  },
+];
+
 export const aboutLinks = ["Personal Info", "Personal Detail", "Skills"];
 
 export const personalData = [

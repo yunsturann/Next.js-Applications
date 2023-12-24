@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import MyImage from "@/public/assets/images/meCroped.webp";
-import RightSection from "./AboutComponents/RightSection";
+import RightSection from "./RightSection";
 
 const AboutSection = () => {
   return (

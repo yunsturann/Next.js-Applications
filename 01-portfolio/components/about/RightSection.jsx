@@ -17,7 +17,7 @@ const RightSection = () => {
             type="button"
             className={`flex-grow p-2 text-center font-semibold tracking-wider rounded-3xl transition duration-300${
               active === index
-                ? " text-white bg-[#fe6d59]"
+                ? "text-white bg-[#fe6d59]"
                 : "text-black bg-white"
             }`}
             onClick={() => setActive(index)}

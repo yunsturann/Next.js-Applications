@@ -1,19 +1,18 @@
 import Link from "next/link";
-import React from "react";
 import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 
-const HeroSection = () => {
+const HeroSection = ({ params }) => {
   return (
-    <section className="group h-[32rem] md:h-[36rem] lg:h-screen bg-black ">
+    <section className="group h-[32rem] md:h-[36rem] lg:h-screen bg-black">
       {/*Hero Container*/}
       <div className="container h-full mx-auto flex justify-center items-center relative">
         {/*Hero Content*/}
         <div className="text-gega-grey text-center space-y-2 lg:space-y-4 cursor-default">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-widest font-bold ">
-            Yunus Turan
+            {params.title}
           </h1>
           <h3 className="text-lg sm:text-xl lg:text-2xl tracking-wider font-semibold uppercase ">
-            Software Developer
+            {params.subtitle}
           </h3>
         </div>
         {/*Bottom Links */}
