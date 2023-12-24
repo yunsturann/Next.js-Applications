@@ -4,7 +4,7 @@ import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="group h-[28rem] sm:h-[32rem] md:h-[36rem] lg:h-[40rem] bg-black ">
+    <section className="group h-[32rem] md:h-[36rem] lg:h-screen bg-black ">
       {/*Hero Container*/}
       <div className="container h-full mx-auto flex justify-center items-center relative">
         {/*Hero Content*/}
