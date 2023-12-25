@@ -4,12 +4,12 @@ import { FaSchool, FaPhoneAlt, FaRegUser, FaCalendar } from "react-icons/fa";
 
 export const aboutSkillsData = [
   {
-    title: "react",
-    ratio: 60,
+    title: "HTML/CSS",
+    ratio: 75,
   },
   {
-    title: "HTML/CSS",
-    ratio: 65,
+    title: "react",
+    ratio: 60,
   },
   {
     title: "Javascript",
@@ -20,12 +20,12 @@ export const aboutSkillsData = [
     ratio: 50,
   },
   {
-    title: "Tailwind",
-    ratio: 80,
+    title: "MsSql",
+    ratio: 70,
   },
   {
-    title: "MsSql",
-    ratio: 75,
+    title: "Tailwind",
+    ratio: 80,
   },
 ];
 

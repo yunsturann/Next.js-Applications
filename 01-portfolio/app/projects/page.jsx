@@ -1,7 +1,8 @@
+import ProjectsContainer from "@/containers/projects";
 import React from "react";
 
 const ProjectsPage = () => {
-  return <div>ProjectsPage</div>;
+  return <ProjectsContainer />;
 };
 
 export default ProjectsPage;

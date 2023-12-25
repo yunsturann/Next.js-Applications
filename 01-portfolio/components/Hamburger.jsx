@@ -27,6 +27,7 @@ const Hamburger = () => {
               key={id}
               href={href}
               className="w-full text-center py-2 rounded-lg hover:bg-gray-200 hover:text-gega-red transition duration-300 "
+              onClick={() => setShow(false)}
             >
               {title}
             </Link>
