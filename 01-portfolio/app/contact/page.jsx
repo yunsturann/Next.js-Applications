@@ -1,7 +1,8 @@
+import ContactContainer from "@/containers/contact";
 import React from "react";
 
 const ContactPage = () => {
-  return <div>ContactPage</div>;
+  return <ContactContainer />;
 };
 
 export default ContactPage;

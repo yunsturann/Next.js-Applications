@@ -9,6 +9,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center px-8 sm:px-14 md:px-16 xl:px-0">
         <Link
           href="/"
+          title="Go to home page"
           className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-widest uppercase text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-gega-grey"
         >
           Yunus

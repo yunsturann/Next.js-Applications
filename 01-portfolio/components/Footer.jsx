@@ -3,7 +3,6 @@ import React from "react";
 import { navLinksData } from "@/mocks/navlinks";
 
 const Footer = () => {
-  const footerLinks = [{ id: 0, title: "home", href: "/" }, ...navLinksData];
   return (
     <footer className="py-8 md:py-12 bg-black px-6 xl:px-0">
       <div className="container mx-auto text-gega-grey max-md:space-y-2 grid grid-cols-1 md:grid-cols-2">
@@ -27,7 +26,7 @@ const Footer = () => {
             LINKS
           </h2>
           <ul className="flex space-x-6 md:space-x-10">
-            {footerLinks.map(({ id, title, href }) => (
+            {navLinksData.map(({ id, title, href }) => (
               <li key={id}>
                 <Link
                   href={href}
