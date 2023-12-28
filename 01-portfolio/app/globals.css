@@ -4,9 +4,35 @@
 
 @layer components {
   .section-title {
-    @apply text-center tracking-wider text-2xl md:text-3xl font-bold text-neutral-700;
+    @apply text-center tracking-wider text-2xl md:text-4xl font-bold text-neutral-700;
   }
   .hamburger-line {
     @apply bg-gray-200 w-8 h-1 group-hover:bg-rose-400;
+  }
+}
+
+.slick-slide > div {
+  margin: 0 1rem;
+}
+
+.slick-list {
+  margin: 0 -1rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #464646 !important;
+  font-size: 2.5rem !important;
+}
+
+.slick-prev:before {
+  position: relative;
+  right: 1.4rem;
+}
+
+@media screen and (max-width: 920px) {
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
   }
 }

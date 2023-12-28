@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/about";
+import Testimonial from "./Testimonial";
 const HomeContainer = () => {
   return (
     <main>
@@ -8,7 +9,10 @@ const HomeContainer = () => {
         params={{ title: "Yunus Turan", subtitle: "Software Developer" }}
       />
       <AboutSection />
+      <hr className=" border-t-[7px] border-dotted border-blue-100 w-1/12 mx-auto" />
       <ProjectsSection />
+      <hr className=" border-t-[7px] border-dotted border-blue-100 w-1/12 mx-auto" />
+      <Testimonial />
     </main>
   );
 };
