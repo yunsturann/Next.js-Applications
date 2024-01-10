@@ -1,7 +1,6 @@
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "@/components/contact";
 import HeroSection from "@/components/HeroSection";
 import React from "react";
-import Testimonial from "../home/Testimonial";
 
 const ContactContainer = () => {
   return (

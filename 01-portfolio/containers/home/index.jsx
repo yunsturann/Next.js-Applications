@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/about";
 import Testimonial from "./Testimonial";
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "@/components/contact";
 const HomeContainer = () => {
   return (
     <main>
