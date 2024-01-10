@@ -1,4 +1,5 @@
 import { Gemunu_Libre } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 import Header from "@/components/Header";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
