@@ -53,7 +53,9 @@ const BlogForm = ({ _title = "", _content = "", _method, url }) => {
         className="outline-none text-lg sm:text-xl p-4 rounded-md"
         required
         value={title}
+        ref={myRef}
         onChange={(e) => setTitle(e.target.value)}
+        tabIndex={"1"}
       />
       <textarea
         name="content"
@@ -61,13 +63,14 @@ const BlogForm = ({ _title = "", _content = "", _method, url }) => {
         className="outline-none text-base sm:text-lg resize-none p-4 h-[400px] rounded-md"
         maxLength={800}
         required
-        ref={myRef}
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        tabIndex={"2"}
       />
       <button
         type="submit"
         className="bg-blue-accent hover:bg-blue-accent-hover text-default-text font-semibold tracking-wider text-base sm:text-lg p-2 sm:p-4 rounded-xl"
+        tabIndex={"3"}
       >
         {_method === "POST" ? "ADD BLOG" : "UPDATE BLOG"}
       </button>

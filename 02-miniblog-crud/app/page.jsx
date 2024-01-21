@@ -15,7 +15,7 @@ const getBlogs = async () => {
 export default async function Home() {
   const { blogs } = await getBlogs();
   return (
-    <section className="min-h-full ">
+    <section className="pb-20">
       {/*Title */}
       <h2 className="text-2xl text-center font-semibold my-6">BLOGS</h2>
       {/* Blogs */}

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input,
+  textarea {
+    @apply bg-card text-default-text;
+  }
+}
+
 p > a {
   color: rgb(90, 90, 247);
 }
