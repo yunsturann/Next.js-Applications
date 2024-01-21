@@ -14,8 +14,8 @@ const ContactSection = () => {
           </h3>
           <p className="text-base md:text-lg px-8">
             I am always open to discussing web development topics. If you have
-            any questions or want to say hi, please feel free to email me. If
-            you want, you should use the link below.
+            any questions or want to say hi, please feel free to mail me. If you
+            want, you should use the form below.
           </p>
 
           {/*Mail Form */}
