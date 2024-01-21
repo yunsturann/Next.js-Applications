@@ -15,8 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={merri.className}>
-        <main className="text-default-text flex flex-col items-center min-h-screen bg-page ">
+      <body className={`${merri.className} bg-page`}>
+        <main className="max-lg:px-[4%]  max-w-5xl mx-auto text-default-text min-h-screen  ">
           <Navbar />
           {children}
         </main>

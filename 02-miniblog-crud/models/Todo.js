@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const blogSchema = new Schema(
   {
     title: String,
-    description: String,
+    content: String,
   },
   {
     timestamps: true,
