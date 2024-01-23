@@ -2,7 +2,7 @@
 
 This repo includes the codes of the projects I made with Next.js
 
-## Portfolio
+## [Portfolio](https://yunsturann.vercel.app/)
 
 - I practiced tailwind and next.js
 - hover effects
@@ -10,7 +10,7 @@ This repo includes the codes of the projects I made with Next.js
 - Image, Link components of Next.js were learned better.
 - slick-slider was used.
 
-## Mini Blog
+## [Mini Blog](https://miniblog-crud.vercel.app/)
 
 - I learned api folder and how to connect mongodb atlas
 - Crud operations were made by using methods such as GET,POST,DELETE,PUT

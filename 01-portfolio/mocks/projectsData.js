@@ -3,6 +3,7 @@ import drumkit from "../public/assets/images/drumkit.png";
 import quoteGen from "../public/assets/images/quoteGen.png";
 import todoV2 from "../public/assets/images/todoV2.png";
 import weather from "../public/assets/images/weather.png";
+import miniBlog from "../public/assets/images/mini-blog.png";
 
 export const projectsData = [
   {
@@ -76,6 +77,22 @@ export const projectsData = [
       {
         name: "Github",
         url: "https://github.com/yunsturann/website/tree/main/Projects/To-do-list-v2",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Mini Blog",
+    description: "To learn CRUD Operations with Mongoose & NEXT",
+    img: miniBlog,
+    links: [
+      {
+        name: "Webpage",
+        url: "https://miniblog-crud.vercel.app/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/yunsturann/Next.js-Applications/tree/main/02-miniblog-crud",
       },
     ],
   },
