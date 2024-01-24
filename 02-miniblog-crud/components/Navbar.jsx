@@ -14,7 +14,7 @@ const Navbar = () => {
       </Link>
       <Link
         href={"/addBlog"}
-        className="flex gap-2 items-center justify-center text-lg font-semibold tracking-wide px-4 py-3 rounded-lg bg-blue-accent hover:bg-blue-accent-hover "
+        className="flex  gap-1 sm:gap-2 items-center justify-center text-base sm:text-lg font-semibold tracking-wide p-2 sm:px-4 sm:py-3 rounded-lg bg-blue-accent hover:bg-blue-accent-hover "
         draggable
       >
         <IoMdAdd size={24} />

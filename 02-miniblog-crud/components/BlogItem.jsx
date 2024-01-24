@@ -21,14 +21,26 @@ const BlogItem = ({ blog }) => {
     });
   };
 
+  const convertDate = (dateString) => {
+    return `${dateString.slice(8, 10)}.${dateString.slice(
+      5,
+      7
+    )}.${dateString.slice(0, 4)}`;
+  };
+
   return (
-    <li className="border-2 border-gray-500 bg-gray-300 p-4 rounded-md flex justify-between gap-4">
+    <li className="border-2 border-gray-500 bg-gray-300 p-4 rounded-md flex justify-between gap-4 sm:gap-6">
       {/*Content */}
       <div>
-        <h2 className="text-2xl font-semibold tracking-wide mb-2">
+        <h2 className="text-xl sm:text-2xl font-semibold tracking-wide">
           {blog.title}
         </h2>
-        <p>{makeLinks(blog.content)}</p>
+        {blog.createdAt !== blog.updatedAt && (
+          <p className="text-xs opacity-70">{`edited at: ${convertDate(
+            blog.updatedAt
+          )}`}</p>
+        )}
+        <p className="text-sm sm:text-base mt-2">{makeLinks(blog.content)}</p>
       </div>
       {/*Icons & Date*/}
       <div className="flex flex-col justify-between items-center">
@@ -41,7 +53,7 @@ const BlogItem = ({ blog }) => {
             <FaRegEdit size={24} />
           </Link>
         </div>
-        <p className="text-sm opacity-70">12/12/2021</p>
+        <p className="text-xs opacity-70">{convertDate(blog.createdAt)}</p>
       </div>
     </li>
   );
