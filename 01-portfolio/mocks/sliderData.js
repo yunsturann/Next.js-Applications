@@ -4,6 +4,7 @@ import me from "../public/assets/images/meCroped.webp";
 import dilber from "../public/assets/images/dilber.jpg";
 import oguz from "../public/assets/images/oguz.png";
 import umut from "../public/assets/images/umut.jpg";
+import corut from "@/public/assets/images/corut.jpg";
 
 export const sliderData = [
   {
@@ -33,5 +34,12 @@ export const sliderData = [
     image: umut,
     text: "I am working with him. He is the best team player I have ever met.",
     role: "Backend Developer",
+  },
+  {
+    id: 5,
+    name: "Corut Ali",
+    image: corut,
+    text: "He set up a webpage for me. It is pretty fancy and very fast. Nice job!",
+    role: "No Stack Developer",
   },
 ];
