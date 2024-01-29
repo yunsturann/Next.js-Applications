@@ -1,6 +1,7 @@
 "use client";
 import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const RemoveBtn = ({ id }) => {
   const router = useRouter();
@@ -14,8 +15,8 @@ const RemoveBtn = ({ id }) => {
       });
       if (res.ok) {
         const data = await res.json();
-        //alert(data.message);
         router.refresh();
+        toast.info(data.message);
       } else {
         throw new Error(res.statusMessage);
       }

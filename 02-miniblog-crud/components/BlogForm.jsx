@@ -1,8 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
 
 const BlogForm = ({ _title = "", _content = "", _method, url }) => {
+  //const EDITMODE = _method === "POST" ? false : true;
   const [title, setTitle] = useState(_title);
   const [content, setContent] = useState(_content);
 
@@ -29,15 +31,20 @@ const BlogForm = ({ _title = "", _content = "", _method, url }) => {
         },
         body: JSON.stringify({ title: title.trim(), content: content.trim() }),
       });
-      if (!res.ok) throw new Error(res.statusMessage);
-      else {
+      if (!res.ok) {
+        toast.error(res.statusMessage);
+        throw new Error(res.statusMessage);
+      } else {
         const data = await res.json();
-        alert(data.message);
         router.push("/");
         router.refresh();
+        toast.success(data.message, {
+          draggable: false,
+          autoClose: 3000,
+        });
       }
     } catch (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   };
 

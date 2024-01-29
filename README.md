@@ -21,3 +21,4 @@ This repo includes the codes of the projects I made with Next.js
 - Finally, data fetching cache strategies were covered
   - cache:"force-cache" default. produce static html
   - cache:"no-store" must be used if content changes all the time.
+- react-toast was added to inform user & increase user experience

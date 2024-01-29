@@ -15,10 +15,10 @@ const RightSection = () => {
           <button
             key={index}
             type="button"
-            className={`flex-grow p-2 text-center font-semibold tracking-wider rounded-3xl transition duration-300${
+            className={`flex-grow p-2 text-center font-semibold tracking-wider rounded-3xl transition duration-300 ${
               active === index
-                ? "text-white bg-[#fe6d59]"
-                : "text-black bg-white"
+                ? "text-white bg-[#fa7968]"
+                : "text-black bg-white hover:bg-slate-200"
             }`}
             onClick={() => setActive(index)}
           >
