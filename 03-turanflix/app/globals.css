@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*SLIDER */
+.slick-slide > div {
+  margin: 0 1rem;
+}
+
+.slick-list {
+  margin: 0 -1rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(216, 216, 216);
+  font-size: 2.5rem !important;
+  position: relative;
+  bottom: 8px;
+}
+.slick-prev:before:hover,
+.slick-next:before:hover {
+  color: white !important;
+}
+
+.slick-prev:before {
+  position: relative;
+  right: 1rem;
+}
+
+.slick-dots > li > button:before {
+  color: white !important;
+}
+
+@media screen and (max-width: 440px) {
+  .slick-slide > div {
+    margin: 0 4px;
+  }
+
+  .slick-list {
+    margin: 0 -4px;
+  }
+
+  .slick-dots li {
+    width: 10px !important;
+    margin: 0 3px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slick-slide > div {
+    margin: 0 8px;
+  }
+
+  .slick-list {
+    margin: 0 -8px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .slick-slide > div {
+    margin: 0 12px;
+  }
+
+  .slick-list {
+    margin: 0 -12px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
+}
