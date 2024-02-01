@@ -11,6 +11,7 @@ const Footer = () => {
           <Link
             href="/"
             className="text-lg md:text-xl lg:text-2xl font-bold tracking-wider uppercase text-transparent bg-gradient-to-r bg-clip-text from-gega-red to-gega-grey"
+            aria-label="yunus"
           >
             Yunus
           </Link>
@@ -31,6 +32,7 @@ const Footer = () => {
                 <Link
                   href={href}
                   className="text-sm uppercase md:text-lg hover:text-gega-melon transition duration-300 p-2 pl-0"
+                  aria-label={title}
                 >
                   {title}
                 </Link>

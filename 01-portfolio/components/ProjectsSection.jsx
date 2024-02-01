@@ -18,14 +18,16 @@ const ProjectsSection = () => {
           {projectsData.map((project) => (
             <article
               key={project.id}
-              className="group w-[14rem] h-[20rem]  sm:w-[18rem] sm:h-[24rem]  flex flex-col  justify-between rounded-md  relative overflow-hidden"
+              className="group w-[14rem] h-[20rem] sm:w-[18rem] sm:h-[24rem] flex flex-col justify-between rounded-md relative overflow-hidden"
             >
               {/* Project Image */}
               <Image
                 src={project.img}
                 alt={project.title}
-                fill
-                className=" group-hover:scale-105 grayscale group-hover:grayscale-0 transition-all duration-500 "
+                width={384}
+                height={288}
+                placeholder="blur"
+                className="h-full group-hover:scale-105 grayscale group-hover:grayscale-0 transition-all duration-500 "
               />
               {/* Project bottom overlay*/}
               <div className="absolute bottom-0  w-full h-3/4 bg-gradient-to-t from-black to-transparent"></div>
@@ -47,6 +49,7 @@ const ProjectsSection = () => {
                       href={item.url}
                       className="p-2 hover:text-gega-melon"
                       target="_blank"
+                      aria-label={project.title + " " + item.name}
                     >
                       {item.name === "Webpage" ? <FaArrowRight /> : <FaCode />}
                     </Link>

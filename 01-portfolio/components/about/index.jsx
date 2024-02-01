@@ -16,8 +16,10 @@ const AboutSection = () => {
             <Image
               src={MyImage}
               alt="Profile"
+              width={280}
+              height={280}
               className="rounded-full w-[220px] h-[220px] lg:w-[280px] lg:h-[280px] object-cover shadow-lg shadow-gray-400"
-              loading="lazy"
+              priority={true}
             />
             <h3 className="font-bold mt-2 text-xl">Yunus Turan</h3>
             <h4>Web Developer</h4>

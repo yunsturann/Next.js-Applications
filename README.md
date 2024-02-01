@@ -9,6 +9,7 @@ This repo includes the codes of the projects I made with Next.js
 - serverside and clientside components were used.
 - Image, Link components of Next.js were learned better.
 - slick-slider was used.
+- added nodemailer (server action)
 
 ## [Mini Blog](https://miniblog-crud.vercel.app/)
 

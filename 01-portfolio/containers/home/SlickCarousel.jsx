@@ -42,7 +42,8 @@ const SlickCarousel = () => {
                 width={150}
                 height={150}
                 className="rounded-full w-[150px] h-[150px] object-cover shadow-md shadow-gray-400"
-                loading="lazy"
+                priority={false}
+                placeholder="blur"
               />
               {/* item header right*/}
               <div>
