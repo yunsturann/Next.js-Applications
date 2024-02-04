@@ -5,6 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 let settings = {
   dots: true,
@@ -40,12 +41,13 @@ const SlickCarousel = ({ genres }) => {
   return (
     <Slider {...settings}>
       {genres.map(({ id, name }) => (
-        <p
+        <Link
           key={id}
-          className="py-4 bg-white bg-opacity-70 hover:bg-opacity-90 cursor-pointer rounded-xl text-black hover:text-rose-500 text-sm sm:text-base lg:text-lg text-center text-nowrap  font-semibold  transition duration-300"
+          href={`/genres/${id}`}
+          className="py-4 bg-white bg-opacity-70 hover:bg-opacity-90 cursor-pointer rounded-xl text-black hover:text-rose-500 text-sm sm:text-base lg:text-lg text-center font-semibold  transition duration-300"
         >
-          {name}
-        </p>
+          <p className="line-clamp-1">{name}</p>
+        </Link>
       ))}
     </Slider>
   );

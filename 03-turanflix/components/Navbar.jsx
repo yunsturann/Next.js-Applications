@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <header className="absolute top-0 z-50  w-full bg-black bg-opacity-90">
+    <header className="fixed top-0 z-50 w-full bg-black bg-opacity-90">
       <div className=" container flex justify-between items-center py-4 md:py-6 text-white">
         <h1 className="text-3xl font-bold tracking-widest cursor-pointer">
           <Link href={"/"}>TURANFLIX</Link>
