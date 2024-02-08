@@ -65,3 +65,14 @@ export const getReviews = async (movieId) => {
     console.log(error);
   }
 };
+
+export const getWithGenre = async (genreId) => {
+  try {
+    const res = await fetch(
+      `${API_URL}/discover/movie?api_key=${process.env.API_KEY}&language=en-US&with_genres=${genreId}&page=1`
+    );
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};

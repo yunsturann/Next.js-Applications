@@ -8,16 +8,27 @@ import {
 } from "@/services/movie";
 
 const Home = async () => {
-  const { results: topRatedMovies } = await getTopRated(1);
-  const { results: popularMovies } = await getPopularMovies(1);
-  const { results: upcomingMovies } = await getUpcomingMovies(1);
+  // const { results: topRatedMovies } = await getTopRated(1);
+  // const { results: popularMovies } = await getPopularMovies(1);
+  // const { results: upcomingMovies } = await getUpcomingMovies(1);
 
-  // const randomIndex = Math.floor(Math.random() * popularMovies.length);
-  // console.log(popularMovies[randomIndex]);
+  //! parallel data fetching is more efficent
+  const [topRatedPromise, popularPromise, upcomingPromise] = await Promise.all([
+    getTopRated(1),
+    getPopularMovies(1),
+    getUpcomingMovies(1),
+  ]);
+
+  const { results: topRatedMovies } = topRatedPromise;
+  const { results: popularMovies } = popularPromise;
+  const { results: upcomingMovies } = upcomingPromise;
 
   topRatedMovies.splice(6);
   popularMovies.splice(6);
   upcomingMovies.splice(6);
+
+  // const randomIndex = Math.floor(Math.random() * popularMovies.length);
+  // console.log(popularMovies[randomIndex]);
 
   return (
     <main className="h-full">
@@ -25,17 +36,17 @@ const Home = async () => {
 
       <div className="bg-gray-950 text-white py-12 sm:py-16 space-y-12 ">
         <MoviesSection
-          title={"Top Rated"}
+          title={"top rated"}
           showAll={false}
           movies={topRatedMovies}
         />
         <MoviesSection
-          title={"Popular Movies"}
+          title={"popular movies"}
           showAll={false}
           movies={popularMovies}
         />
         <MoviesSection
-          title={"Upcoming Movies"}
+          title={"upcoming movies"}
           showAll={false}
           movies={upcomingMovies}
         />

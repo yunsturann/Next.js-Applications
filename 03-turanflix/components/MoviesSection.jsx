@@ -12,7 +12,7 @@ const MoviesSection = ({ title, movies, showAll }) => {
         </h2>
         {!showAll && (
           <Link
-            href={"/"}
+            href={`/category/${title}`}
             className="text-lg hover:text-red-400 hover:underline underline-offset-8 transition duration-300"
           >
             View all

@@ -43,7 +43,7 @@ const SlickCarousel = ({ genres }) => {
       {genres.map(({ id, name }) => (
         <Link
           key={id}
-          href={`/genres/${id}`}
+          href={`/genres/${id}?genre=${name}`}
           className="py-4 bg-white bg-opacity-70 hover:bg-opacity-90 cursor-pointer rounded-xl text-black hover:text-rose-500 text-sm sm:text-base lg:text-lg text-center font-semibold  transition duration-300"
         >
           <p className="line-clamp-1">{name}</p>

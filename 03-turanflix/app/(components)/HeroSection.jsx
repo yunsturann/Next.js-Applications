@@ -11,10 +11,9 @@ const HeroSection = ({ movie }) => {
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
         fill
         className="-z-20 object-cover"
-        unoptimized
       />
-      {/*bottom gradient */}
-      <div className="absolute bottom-0 -z-10 h-1/2 w-full bg-gradient-to-t from-black to-transparent"></div>
+      {/*bottom overlay gradient */}
+      <div className="absolute bottom-0 -z-10 h-2/3 w-full bg-gradient-to-t from-black to-transparent"></div>
       {/*Content */}
       <div className="container text-white space-y-4 h-1/2 flex flex-col justify-between mb-16">
         {/*About Movie */}
