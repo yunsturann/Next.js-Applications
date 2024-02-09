@@ -5,9 +5,13 @@ import allGenres from "@/contants/genres";
 import Link from "next/link";
 
 const MovieCard = ({ movie }) => {
-  const { name } = allGenres.genres.find(
+  const genre = allGenres.genres.find(
     (genre) => genre.id === movie.genre_ids[0]
   );
+  let name = "";
+  if (genre) {
+    name = genre.name;
+  }
 
   return (
     <Link
@@ -17,12 +21,19 @@ const MovieCard = ({ movie }) => {
     >
       <article className="group hover:scale-110 space-y-3  transition-transform duration-300">
         {/*Image */}
-        <Image
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-          height={380}
-          width={320}
-          className="rounded-xl"
-        />
+        {movie.poster_path ? (
+          <Image
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            alt="movie-img"
+            height={380}
+            width={320}
+            className="rounded-xl"
+          />
+        ) : (
+          <div className="bg-black h-3/4 rounded-xl grid place-items-center">
+            image-not-found
+          </div>
+        )}
 
         {/*About movie*/}
         <div className=" space-y-1 ">

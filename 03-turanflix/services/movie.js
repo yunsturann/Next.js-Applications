@@ -14,7 +14,7 @@ export const getGenres = async () => {
 export const getTopRated = async (page) => {
   try {
     const res = await fetch(
-      `${API_URL}/movie/top_rated?language=en-US&api_key=${process.env.API_KEY}&page=${page}`
+      `${API_URL}/movie/top_rated?language=en-US&api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${page}`
     );
     return await res.json();
   } catch (error) {
@@ -25,7 +25,7 @@ export const getTopRated = async (page) => {
 export const getPopularMovies = async (page) => {
   try {
     const res = await fetch(
-      `${API_URL}/movie/popular?language=en-US&api_key=${process.env.API_KEY}&page=${page}`
+      `${API_URL}/movie/popular?language=en-US&api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${page}`
     );
     return await res.json();
   } catch (error) {
@@ -36,7 +36,7 @@ export const getPopularMovies = async (page) => {
 export const getUpcomingMovies = async (page) => {
   try {
     const res = await fetch(
-      `${API_URL}/movie/upcoming?language=en-US&api_key=${process.env.API_KEY}&page=${page}`
+      `${API_URL}/movie/upcoming?language=en-US&api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${page}`
     );
     return await res.json();
   } catch (error) {
@@ -66,10 +66,10 @@ export const getReviews = async (movieId) => {
   }
 };
 
-export const getWithGenre = async (genreId) => {
+export const getWithGenre = async (genreId, page = 1) => {
   try {
     const res = await fetch(
-      `${API_URL}/discover/movie?api_key=${process.env.API_KEY}&language=en-US&with_genres=${genreId}&page=1`
+      `${API_URL}/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&with_genres=${genreId}&page=${page}`
     );
     return await res.json();
   } catch (error) {

@@ -1,13 +1,16 @@
 import Reviews from "@/components/Reviews";
-import { getSignleMovie } from "@/services/movie";
+import { getReviews, getSignleMovie } from "@/services/movie";
 import Image from "next/image";
 import Link from "next/link";
 import { FaHeart, FaStar } from "react-icons/fa";
 
 const Movie = async ({ params }) => {
   const { id } = params;
-  const movie = await getSignleMovie(id);
-  //  console.log(movie);
+  const [movie, { results: reviews }] = await Promise.all([
+    getSignleMovie(id),
+    getReviews(id),
+  ]);
+
   return (
     <section className="min-h-screen text-white py-24 sm:py-32 relative">
       <div className="absolute inset-0 -z-50 bg-gray-900"></div>
@@ -18,6 +21,7 @@ const Movie = async ({ params }) => {
           <div className=" ">
             <Image
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              alt="movie-img"
               height={320}
               width={320}
               className="object-contain rounded-2xl"
@@ -29,6 +33,7 @@ const Movie = async ({ params }) => {
             {/*background image*/}
             <Image
               src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+              alt="bg-img-movie"
               fill
               className="opacity-20 rounded-2xl blur-md -z-10"
             />
@@ -46,7 +51,7 @@ const Movie = async ({ params }) => {
               {/*IMDb section */}
               <div className="text-gray-400 ">
                 <p className="uppercase ">imdb rating</p>
-                <div className="flex items-center justify-between bg-gray-800 hover:bg-gray-700 rounded-lg p-1 px">
+                <div className="flex items-center justify-between bg-gray-700 hover:bg-gray-600 rounded-lg p-1 px">
                   <FaStar size={32} color="orange" />
                   <div>
                     <p className="tracking-wide">
@@ -65,12 +70,13 @@ const Movie = async ({ params }) => {
 
             <div className="flex flex-wrap gap-2">
               {movie.genres.map(({ id, name }) => (
-                <p
+                <Link
+                  href={`/genres/${id}?genre=${name}`}
                   key={id}
-                  className="bg-gray-800 hover:bg-gray-700 p-1.5 px-4 rounded-full cursor-default"
+                  className="bg-gray-800 hover:bg-gray-700 p-1.5 px-4 rounded-full cursor-pointer"
                 >
                   {name}
-                </p>
+                </Link>
               ))}
             </div>
 
@@ -80,7 +86,7 @@ const Movie = async ({ params }) => {
             {/*buttons for actions*/}
             <div className="flex items-stretch gap-6 text-lg md:text-xl lg:text-2xl font-semibold sm:pt-6">
               <Link
-                href={"/movie/" + "id"}
+                href={"/movies/" + movie.id}
                 className="px-6 md:px-12 bg-white hover:bg-gray-300 rounded-full text-neutral-800 hover:text-rose-500 tracking-wider flex items-center transition duration-300"
               >
                 Play
@@ -95,7 +101,7 @@ const Movie = async ({ params }) => {
           </div>
         </div>
         {/*Review */}
-        <Reviews id={movie.id} />
+        <Reviews reviews={reviews} />
       </div>
     </section>
   );

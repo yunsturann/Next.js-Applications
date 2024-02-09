@@ -4,18 +4,18 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
-import logo from "@/public/images/logo.jpeg";
-
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <header className="fixed top-0 z-50 w-full bg-black bg-opacity-90">
-      <div className=" container flex justify-between items-center py-6 text-white">
+      <div className=" container flex flex-wrap justify-between items-center py-6 text-white">
         {/*Logo and Brand */}
-        <Link href={"/"} className="flex gap-2 sm:gap-4 items-center">
-          <Image src={logo} width={36} height={36} className="rounded-full" />
-          <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold tracking-widest cursor-pointer">
+        <Link href={"/"}>
+          <h1
+            className="text-2xl lg:text-3xl font-bold sm:tracking-widest cursor-pointer text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-blue-200 "
+            title="homepage"
+          >
             TURANFLIX
           </h1>
         </Link>

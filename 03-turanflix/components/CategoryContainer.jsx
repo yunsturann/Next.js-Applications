@@ -1,5 +1,6 @@
 import MoviesSection from "@/components/MoviesSection";
 import Image from "next/image";
+import LoadMore from "./LoadMore";
 
 const CategoryContainer = ({ title, movies }) => {
   return (
@@ -10,6 +11,7 @@ const CategoryContainer = ({ title, movies }) => {
       <div className="fixed h-screen w-full -z-30 opacity-50 ">
         <Image
           src={`https://image.tmdb.org/t/p/original${movies[0].backdrop_path}`}
+          alt="bg-image"
           fill
           className="blur-sm"
           priority={true}
@@ -17,8 +19,13 @@ const CategoryContainer = ({ title, movies }) => {
       </div>
       <div className="fixed h-screen w-full bg-black -z-20 opacity-50 "></div>
 
-      <div className="py-32">
+      {/* <div className="pt-32">
         <MoviesSection title={title} showAll={true} movies={movies} />
+      </div> */}
+
+      {/*Load More */}
+      <div className="py-32">
+        <LoadMore title={title} initialMovies={movies} />
       </div>
     </section>
   );

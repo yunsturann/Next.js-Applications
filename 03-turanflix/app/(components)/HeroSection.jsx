@@ -9,6 +9,7 @@ const HeroSection = ({ movie }) => {
       {/*Image & Overlay */}
       <Image
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+        alt="bg-image-hero"
         fill
         className="-z-20 object-cover"
       />
@@ -18,17 +19,17 @@ const HeroSection = ({ movie }) => {
       <div className="container text-white space-y-4 h-1/2 flex flex-col justify-between mb-16">
         {/*About Movie */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold md:w-2/3 mb-4">
+          <h1 className="text-4xlxl md:text-5xl lg:text-7xl font-bold md:w-2/3 mb-4">
             {movie?.title}
           </h1>
-          <p className="text-base md:text-lg lg:text-xl md:w-1/2 font-semibold line-clamp-2">
+          <p className="text-base md:text-lg lg:text-xl md:w-2/3 font-semibold line-clamp-2">
             {movie?.overview}
           </p>
           {/*Buttons*/}
-          <div className="flex items-stretch gap-6 text-lg md:text-xl lg:text-2xl font-semibold ">
+          <div className="flex flex-wrap items-stretch gap-6 text-lg md:text-xl lg:text-2xl font-semibold ">
             <Link
               href={"/movies/" + movie.id}
-              className="px-12 md:px-24 bg-white hover:bg-gray-300 rounded-full text-neutral-800 tracking-wider flex items-center  transition duration-300"
+              className="py-3 px-12 md:px-24 bg-white hover:bg-gray-300 rounded-full text-neutral-800 tracking-wider flex items-center  transition duration-300"
             >
               Play
             </Link>

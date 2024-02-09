@@ -4,7 +4,7 @@ import React from "react";
 
 const MoviesSection = ({ title, movies, showAll }) => {
   return (
-    <section className="container  space-y-4 sm:space-y-6">
+    <section className="container space-y-4 sm:space-y-6">
       {/*header of the section */}
       <div className="flex justify-between items-center">
         <h2 className="text-2xl sm:text-3xl font-semibold  tracking-wider uppercase">
@@ -21,8 +21,8 @@ const MoviesSection = ({ title, movies, showAll }) => {
       </div>
       {/*Movie cards  container*/}
       <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-x-4 gap-y-8">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+        {movies.map((movie, index) => (
+          <MovieCard key={index} movie={movie} />
         ))}
       </div>
     </section>
