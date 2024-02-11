@@ -1,11 +1,13 @@
 import Reviews from "@/components/Reviews";
+import Trailer from "@/components/Trailer";
 import { getReviews, getSignleMovie } from "@/services/movie";
 import Image from "next/image";
 import Link from "next/link";
 import { FaHeart, FaStar } from "react-icons/fa";
 
-const Movie = async ({ params }) => {
+const Movie = async ({ params, searchParams }) => {
   const { id } = params;
+  const { watch } = searchParams;
   const [movie, { results: reviews }] = await Promise.all([
     getSignleMovie(id),
     getReviews(id),
@@ -14,11 +16,11 @@ const Movie = async ({ params }) => {
   return (
     <section className="min-h-screen text-white py-24 sm:py-32 relative">
       <div className="absolute inset-0 -z-50 bg-gray-900"></div>
-      <div className="max-w-7xl max-xl:p-8 mx-auto flex flex-col gap-8 sm:gap-12">
+      <div className="movie-container max-w-7xl max-2xl:px-8 mx-auto flex flex-col gap-8 sm:gap-12">
         {/*Movie field*/}
         <div className="flex max-md:items-center max-md:flex-col gap-5 sm:gap-10">
           {/*LEFT AREA IMAGE*/}
-          <div className=" ">
+          <div className="">
             <Image
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt="movie-img"
@@ -86,7 +88,7 @@ const Movie = async ({ params }) => {
             {/*buttons for actions*/}
             <div className="flex items-stretch gap-6 text-lg md:text-xl lg:text-2xl font-semibold sm:pt-6">
               <Link
-                href={"/movies/" + movie.id}
+                href={"/movies/" + movie.id + "?watch=true"}
                 className="px-6 md:px-12 bg-white hover:bg-gray-300 rounded-full text-neutral-800 hover:text-rose-500 tracking-wider flex items-center transition duration-300"
               >
                 Play
@@ -100,6 +102,20 @@ const Movie = async ({ params }) => {
             </div>
           </div>
         </div>
+
+        {/*Trailer */}
+        {watch === "true" &&
+          (movie.videos.results.length > 0 ? (
+            <Trailer
+              video={movie.videos.results}
+              playlistImg={movie.backdrop_path}
+            />
+          ) : (
+            <p className="text-center bg-red-100 text-red-500">
+              Trailer not available!
+            </p>
+          ))}
+
         {/*Review */}
         <Reviews reviews={reviews} />
       </div>

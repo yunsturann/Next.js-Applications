@@ -28,7 +28,7 @@ const HeroSection = ({ movie }) => {
           {/*Buttons*/}
           <div className="flex flex-wrap items-stretch gap-6 text-lg md:text-xl lg:text-2xl font-semibold ">
             <Link
-              href={"/movies/" + movie.id}
+              href={"/movies/" + movie.id + "?watch=true"}
               className="py-3 px-12 md:px-24 bg-white hover:bg-gray-300 rounded-full text-neutral-800 tracking-wider flex items-center  transition duration-300"
             >
               Play

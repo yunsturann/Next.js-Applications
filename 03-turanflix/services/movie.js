@@ -47,7 +47,7 @@ export const getUpcomingMovies = async (page) => {
 export const getSignleMovie = async (movieId) => {
   try {
     const res = await fetch(
-      `${API_URL}/movie/${movieId}?language=en-US&api_key=${process.env.API_KEY}`
+      `${API_URL}/movie/${movieId}?language=en-US&api_key=${process.env.API_KEY}&append_to_response=videos`
     );
     return await res.json();
   } catch (error) {

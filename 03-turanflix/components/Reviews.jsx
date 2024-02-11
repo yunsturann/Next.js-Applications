@@ -1,12 +1,11 @@
-import { getReviews } from "@/services/movie";
 import Image from "next/image";
 import avatar from "@/public/images/avatar.png";
 
-const Review = async ({ reviews }) => {
+const Review = ({ reviews }) => {
   if (reviews.length === 0) return <></>;
 
   return (
-    <section id="review">
+    <section>
       <h2 className="text-2xl sm:text-3xl font-semibold tracking-wider uppercase">
         Reviews
       </h2>

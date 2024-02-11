@@ -4,24 +4,24 @@
 
 /*CUSTOM SCROOLBAR */
 /* width */
-#review ::-webkit-scrollbar {
-  width: 6px;
+.movie-container ::-webkit-scrollbar {
+  width: 8px;
 }
 
 /* Track */
-#review ::-webkit-scrollbar-track {
+.movie-container ::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 8px;
 }
 
 /* Handle */
-#review ::-webkit-scrollbar-thumb {
-  background: #888;
+.movie-container ::-webkit-scrollbar-thumb {
+  background: #555;
   border-radius: 8px;
 }
 
 /* Handle on hover */
-#review ::-webkit-scrollbar-thumb:hover {
+.movie-container ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
