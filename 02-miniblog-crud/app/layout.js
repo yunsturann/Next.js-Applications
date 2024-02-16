@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${merri.className} bg-page`}>
         <ToastContainer />
-        <main className="max-lg:px-[4%] max-w-5xl mx-auto text-default-text max-h-screen  ">
+        <main className="max-xl:px-[4%] max-w-5xl mx-auto text-default-text min-h-screen  ">
           <Navbar />
           {children}
         </main>

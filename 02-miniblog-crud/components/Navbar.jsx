@@ -3,7 +3,7 @@ import { IoMdAdd } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center w-full max-w-5xl bg-nav p-6 uppercase">
+    <nav className="flex justify-between items-center w-full bg-nav p-6 uppercase">
       <Link href={"/"}>
         <h1
           className="text-4xl font-bold tracking-widest text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-rose-50"

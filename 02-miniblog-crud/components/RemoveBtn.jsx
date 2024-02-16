@@ -16,12 +16,12 @@ const RemoveBtn = ({ id }) => {
       if (res.ok) {
         const data = await res.json();
         router.refresh();
-        toast.info(data.message);
+        toast.success(data.message);
       } else {
         throw new Error(res.statusMessage);
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Failed to delete!", error);
     }
   };
 
@@ -30,7 +30,7 @@ const RemoveBtn = ({ id }) => {
       className="text-red-500 cursor-pointer hover:opacity-80"
       onClick={handleRemove}
     >
-      <FaTrashAlt size={24} />
+      <FaTrashAlt className="size-5 sm:size-7" />
     </button>
   );
 };

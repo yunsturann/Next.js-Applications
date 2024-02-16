@@ -21,22 +21,29 @@ const BlogItem = ({ blog }) => {
     });
   };
 
-  const convertDate = (dateString) => {
-    return `${dateString.slice(8, 10)}.${dateString.slice(
-      5,
-      7
-    )}.${dateString.slice(0, 4)}`;
+  const formatTimestamp = (timestamp) => {
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour12: true,
+    };
+
+    const date = new Date(timestamp);
+    const formattedDate = date.toLocaleString("en-US", options);
+
+    return formattedDate;
   };
 
   return (
-    <li className="border-2 border-gray-500 bg-gray-300 p-4 rounded-md flex justify-between gap-4 sm:gap-6">
+    <li className="border-2 border-gray-500 bg-gray-300 p-2 sm:p-4 rounded-md flex justify-between gap-2 sm:gap-6">
       {/*Content */}
       <div>
         <h2 className="text-xl sm:text-2xl font-semibold tracking-wide">
           {blog.title}
         </h2>
         {blog.createdAt !== blog.updatedAt && (
-          <p className="text-xs opacity-70">{`edited at: ${convertDate(
+          <p className="text-xs opacity-70">{`edited at: ${formatTimestamp(
             blog.updatedAt
           )}`}</p>
         )}
@@ -50,10 +57,10 @@ const BlogItem = ({ blog }) => {
             href={"/editBlog/" + blog._id}
             className="cursor-pointer hover:opacity-70"
           >
-            <FaRegEdit size={24} />
+            <FaRegEdit className="size-5 sm:size-7" />
           </Link>
         </div>
-        <p className="text-xs opacity-70">{convertDate(blog.createdAt)}</p>
+        <p className="text-xs opacity-70 ">{formatTimestamp(blog.createdAt)}</p>
       </div>
     </li>
   );
