@@ -19,7 +19,7 @@ const HeroSection = ({ movie }) => {
       <div className="container text-white space-y-4 h-1/2 flex flex-col justify-between mb-16">
         {/*About Movie */}
         <div className="space-y-6">
-          <h1 className="text-4xlxl md:text-5xl lg:text-7xl font-bold md:w-2/3 mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold md:w-2/3 mb-4">
             {movie?.title}
           </h1>
           <p className="text-base md:text-lg lg:text-xl md:w-2/3 font-semibold line-clamp-2">

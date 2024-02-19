@@ -21,9 +21,18 @@ const MoviesSection = ({ title, movies, showAll }) => {
       </div>
       {/*Movie cards  container*/}
       <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-x-4 gap-y-8">
-        {movies.map((movie, index) => (
-          <MovieCard key={index} movie={movie} />
-        ))}
+        {movies.map((movie, index) => {
+          let indexTime = index % 20;
+
+          return (
+            <MovieCard
+              key={index}
+              movie={movie}
+              prefetch={showAll ? false : true}
+              index={indexTime}
+            />
+          );
+        })}
       </div>
     </section>
   );

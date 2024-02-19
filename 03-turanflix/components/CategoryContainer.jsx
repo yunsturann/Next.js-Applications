@@ -1,8 +1,9 @@
-import MoviesSection from "@/components/MoviesSection";
 import Image from "next/image";
 import LoadMore from "./LoadMore";
 
 const CategoryContainer = ({ title, movies }) => {
+  const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+
   return (
     <section className="min-h-screen  text-white  relative">
       {/*bg color*/}
@@ -10,7 +11,7 @@ const CategoryContainer = ({ title, movies }) => {
       {/*Image */}
       <div className="fixed h-screen w-full -z-30 opacity-50 ">
         <Image
-          src={`https://image.tmdb.org/t/p/original${movies[0].backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${randomMovie.backdrop_path}`}
           alt="bg-image"
           fill
           className="blur-sm"
@@ -18,10 +19,6 @@ const CategoryContainer = ({ title, movies }) => {
         />
       </div>
       <div className="fixed h-screen w-full bg-black -z-20 opacity-50 "></div>
-
-      {/* <div className="pt-32">
-        <MoviesSection title={title} showAll={true} movies={movies} />
-      </div> */}
 
       {/*Load More */}
       <div className="py-32">

@@ -11,15 +11,15 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import spinner from "@/public/images/spinner.svg";
 import MoviesSection from "./MoviesSection";
+import { usePathname } from "next/navigation";
 
 let page = 2;
 
 const LoadMore = ({ title, initialMovies }) => {
+  const pathname = usePathname();
   const { ref, inView } = useInView();
 
   const [movies, setMovies] = useState(initialMovies);
-
-  //console.log(title);
 
   useEffect(() => {
     if (!inView) return;
@@ -34,15 +34,18 @@ const LoadMore = ({ title, initialMovies }) => {
       } else if (title.startsWith("upcoming movies")) {
         const { results } = await getUpcomingMovies(page);
         setMovies([...movies, ...results]);
-      } else {
-        const { id } = genres.genres.find((genre) => genre.name === title);
+      } else if (pathname.startsWith("/genre")) {
+        // const { id } = genres.genres.find((genre) => genre.name === title);
+        const id = pathname.split("/")[2];
         const { results } = await getWithGenre(id, page);
         setMovies([...movies, ...results]);
       }
       page++;
     }
     fetchMovie();
-  }, [inView, movies]);
+  }, [inView]);
+
+  if (!movies) return null;
 
   return (
     <>
