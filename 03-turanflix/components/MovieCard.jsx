@@ -14,9 +14,9 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
   const genre = allGenres.genres.find(
     (genre) => genre.id === movie.genre_ids[0]
   );
-  let name = "";
+  let genreName = "";
   if (genre) {
-    name = genre.name;
+    genreName = genre.name;
   }
 
   return (
@@ -25,7 +25,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
       initial="hidden"
       animate="visible"
       transition={{
-        delay: index * 0.15,
+        delay: index * 0.2,
         ease: "easeInOut",
         duration: 0.5,
       }}
@@ -37,7 +37,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
         style={{ display: "contents" }}
         prefetch={prefetch}
       >
-        <article className="group hover:scale-110 space-y-3  transition-transform duration-300">
+        <article className="group hover:scale-110 space-y-3 transition-transform duration-300 h-full ">
           {/*Image */}
           {movie.poster_path ? (
             <Image
@@ -65,7 +65,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
             </div>
             <div className="flex flex-wrap items-center gap-x-2 text-neutral-500">
               <p className="group-hover:text-red-500 hover:text-white">
-                {name}
+                {genreName}
               </p>
               &diams;
               <p>{movie.release_date.slice(0, 4)}</p>

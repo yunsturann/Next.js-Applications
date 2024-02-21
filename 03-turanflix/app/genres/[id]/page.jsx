@@ -15,3 +15,11 @@ const Genre = async ({ params, searchParams }) => {
 };
 
 export default Genre;
+
+export const generateMetadata = ({ searchParams }) => {
+  const { genre } = searchParams;
+  return {
+    title: genre,
+    description: `Movies in the ${genre} genre`,
+  };
+};

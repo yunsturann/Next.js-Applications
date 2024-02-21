@@ -4,6 +4,20 @@ import avatar from "@/public/images/avatar.png";
 const Review = ({ reviews }) => {
   if (reviews.length === 0) return <></>;
 
+  const formatTimestamp = (timestamp) => {
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour12: true,
+    };
+
+    const date = new Date(timestamp);
+    const formattedDate = date.toLocaleString("en-US", options);
+
+    return formattedDate;
+  };
+
   return (
     <section>
       <h2 className="text-2xl sm:text-3xl font-semibold tracking-wider uppercase">
@@ -40,14 +54,14 @@ const Review = ({ reviews }) => {
                 )}
               </h3>
               <p className="text-sm italic text-gray-400 ">
-                created at: {review.created_at.slice(0, 10)}
+                created at: {formatTimestamp(review.created_at)}
                 {review.created_at !== review.updated_at && (
                   <span className="ml-4">
-                    edited at: {review.updated_at.slice(0, 10)}
+                    edited at: {formatTimestamp(review.updated_at)}
                   </span>
                 )}
               </p>
-              <div className="max-h-60 overflow-y-auto mt-1">
+              <div className="max-h-52 overflow-y-auto mt-1">
                 <p className="text-sm sm:text-base">{review.content}</p>
               </div>
             </div>

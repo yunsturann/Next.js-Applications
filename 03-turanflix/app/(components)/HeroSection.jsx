@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaHeart } from "react-icons/fa";
 import Genres from "./Genres";
+import HeartButton from "@/components/ui/HeartButton";
 
 const HeroSection = ({ movie }) => {
   return (
@@ -33,12 +34,7 @@ const HeroSection = ({ movie }) => {
             >
               Play
             </Link>
-            <button
-              type="button"
-              className="border-2 rounded-full h-14 w-14 lg:h-16 lg:w-16 flex justify-center items-center text-white hover:text-rose-500 hover:border-red-400 transition duration-300 "
-            >
-              <FaHeart />
-            </button>
+            <HeartButton movie={movie} classes={"h-14 w-14 lg:h-16 lg:w-16"} />
           </div>
         </div>
         {/*genres / categories */}

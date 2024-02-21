@@ -1,5 +1,6 @@
 import Reviews from "@/components/Reviews";
 import Trailer from "@/components/Trailer";
+import HeartButton from "@/components/ui/HeartButton";
 import { getReviews, getSignleMovie } from "@/services/movie";
 import Image from "next/image";
 import Link from "next/link";
@@ -93,12 +94,10 @@ const Movie = async ({ params, searchParams }) => {
               >
                 Play
               </Link>
-              <button
-                type="button"
-                className="border-2 rounded-full h-10 w-10 md:h-12 md:w-12 flex justify-center items-center text-white hover:text-rose-500 hover:border-red-400 transition duration-300 "
-              >
-                <FaHeart />
-              </button>
+              <HeartButton
+                movie={movie}
+                classes={"h-10 w-10 md:h-12 md:w-12"}
+              />
             </div>
           </div>
         </div>
@@ -124,3 +123,12 @@ const Movie = async ({ params, searchParams }) => {
 };
 
 export default Movie;
+
+export const generateMetadata = async ({ params }) => {
+  const { id } = params;
+  const movie = await getSignleMovie(id);
+  return {
+    title: movie.title,
+    description: movie.overview,
+  };
+};

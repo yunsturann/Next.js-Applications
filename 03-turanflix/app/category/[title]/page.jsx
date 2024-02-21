@@ -29,3 +29,12 @@ const Category = async ({ params }) => {
 };
 
 export default Category;
+
+export const generateMetadata = ({ params }) => {
+  const { title } = params;
+  let newTitle = title.split("%")[0];
+  return {
+    title: newTitle.at(0).toUpperCase() + newTitle.slice(1) + " Movies",
+    desc: "Movies in the category of " + newTitle + " movies",
+  };
+};

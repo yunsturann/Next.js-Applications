@@ -2,7 +2,7 @@ import Image from "next/image";
 import LoadMore from "./LoadMore";
 
 const CategoryContainer = ({ title, movies }) => {
-  const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+  // const randomMovie = movies[Math.floor(Math.random() * movies.length)];
 
   return (
     <section className="min-h-screen  text-white  relative">
@@ -11,7 +11,7 @@ const CategoryContainer = ({ title, movies }) => {
       {/*Image */}
       <div className="fixed h-screen w-full -z-30 opacity-50 ">
         <Image
-          src={`https://image.tmdb.org/t/p/original${randomMovie.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${movies[0].backdrop_path}`}
           alt="bg-image"
           fill
           className="blur-sm"

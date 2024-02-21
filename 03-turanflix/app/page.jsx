@@ -37,7 +37,7 @@ const Home = async () => {
     <main className="h-full">
       <HeroSection movie={randomMovie} />
 
-      <div className="bg-gray-950 text-white py-12 sm:py-16 space-y-12 ">
+      <div className="bg-gray-900 text-white py-12 sm:py-16 space-y-12 ">
         <MoviesSection
           title={"top rated"}
           showAll={false}
