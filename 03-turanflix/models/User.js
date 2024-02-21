@@ -1,4 +1,5 @@
 import { Schema, models, model } from "mongoose";
+import { movieSchema } from "./Movie";
 
 const UserSchema = new Schema(
   {
@@ -14,6 +15,7 @@ const UserSchema = new Schema(
     image: {
       type: String,
     },
+    // favorites:[movieSchema], daha verimli olurdu fakat populate etmek için bu şekilde kullanmadım. zaten kaç kişi kullancak
   },
   { timestamps: true }
 );

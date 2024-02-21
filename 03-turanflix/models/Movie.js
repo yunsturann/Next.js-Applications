@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const movieSchema = new Schema(
+export const movieSchema = new Schema(
   {
     id: {
       type: Number,
