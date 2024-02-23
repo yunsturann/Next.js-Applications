@@ -4,25 +4,30 @@
 
 /*CUSTOM SCROOLBAR */
 /* width */
+.navbar ::-webkit-scrollbar,
 .movie-container ::-webkit-scrollbar {
   width: 8px;
 }
 
 /* Track */
+.navbar ::-webkit-scrollbar-track,
 .movie-container ::-webkit-scrollbar-track {
-  background: #f1f1f1;
   border-radius: 8px;
+  background: #555;
 }
 
 /* Handle */
+.navbar ::-webkit-scrollbar-thumb,
 .movie-container ::-webkit-scrollbar-thumb {
-  background: #555;
+  background: #000;
+
   border-radius: 8px;
 }
 
 /* Handle on hover */
+.navbar ::-webkit-scrollbar-thumb:hover,
 .movie-container ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #000;
 }
 
 /*SLIDER */

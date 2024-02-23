@@ -14,7 +14,7 @@ const Footer = () => {
           </h2>
           <p className="my-4">
             I made this website to practice my web dev skills with Next.js and
-            Tailwind. I used TMDB API to fetch movies data. It's link is below.
+            Tailwind. I used TMDB API to fetch movies data. Its link is below.
           </p>
           <div className="inline-block border border-white bg-rose-600 hover:opacity-70 px-8 py-1.5 text-lg rounded-full mt-2 cursor-pointer">
             <Link href="https://www.themoviedb.org/" target="_blank">

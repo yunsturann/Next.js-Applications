@@ -1,13 +1,14 @@
 "use client";
 import { FaHeart } from "react-icons/fa";
 import { useSession } from "next-auth/react";
+import { toast } from "react-toastify";
 
 const HeartButton = ({ movie, classes }) => {
   const { data: session } = useSession();
 
   const handleClick = async () => {
     if (!session) {
-      alert("You must be logged in to add a movie to your favorites");
+      toast.error("You must be logged in to add a movie to favorites");
     }
     try {
       const res = await fetch("/api/movie", {
@@ -18,10 +19,10 @@ const HeartButton = ({ movie, classes }) => {
         body: JSON.stringify({ movie, userId: session?.user.id }),
       });
       if (res.ok) {
-        alert("Movie added to favorites!");
+        toast.success("Movie added to favorites");
       }
     } catch (error) {
-      alert(error);
+      toast.error("An error occurred while adding the movie to favorites");
     }
   };
 
