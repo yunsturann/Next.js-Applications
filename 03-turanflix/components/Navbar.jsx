@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import GenresButton from "./ui/GenresButton";
+import { usePathname, useRouter } from "next/navigation";
 
-let currPosition = 0;
+let lastPosition = 0;
 
 const Navbar = () => {
   const { data: session } = useSession();
+  const router = useRouter();
+  const pathname = usePathname();
   const profileImg = session?.user?.image;
 
   const [showDropdown, setShowDropdown] = useState(false);
@@ -21,8 +24,22 @@ const Navbar = () => {
     });
   }, []);
 
+  const handleSignOut = () => {
+    if (!confirm("Are you sure you want to sign out?")) return;
+    // if user is on protected page(like profile), redirect to home page after signout
+
+    if (pathname === "/profile") {
+      router.push("/");
+      setTimeout(() => {
+        signOut();
+      }, 2000);
+    } else {
+      signOut();
+    }
+  };
+
   const checkScroll = () => {
-    if (Math.abs(currPosition - window.scrollY) > 200) {
+    if (Math.abs(lastPosition - window.scrollY) > 200) {
       setShowDropdown(false);
       // close event not to check always, it might decrease performance
       window.removeEventListener("scroll", checkScroll);
@@ -34,7 +51,7 @@ const Navbar = () => {
     const currShowDropdown = showDropdown;
     setShowDropdown((prev) => !prev);
     if (!currShowDropdown) {
-      currPosition = window.scrollY;
+      lastPosition = window.scrollY;
       window.addEventListener("scroll", checkScroll);
     }
   };
@@ -69,7 +86,7 @@ const Navbar = () => {
             <>
               <button
                 className="bg-white text-black px-4 py-2 rounded-xl  font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
-                onClick={signOut}
+                onClick={handleSignOut}
               >
                 SignOut
               </button>
@@ -129,7 +146,7 @@ const Navbar = () => {
                     className="rounded-full "
                   />
                   <button
-                    onClick={signOut}
+                    onClick={handleSignOut}
                     className="bg-white text-black px-6 py-2 rounded-xl text-lg font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
                   >
                     SignOut

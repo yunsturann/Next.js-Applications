@@ -9,6 +9,7 @@ const HeartButton = ({ movie, classes }) => {
   const handleClick = async () => {
     if (!session) {
       toast.error("You must be logged in to add a movie to favorites");
+      return;
     }
     try {
       const res = await fetch("/api/movie", {
@@ -20,6 +21,9 @@ const HeartButton = ({ movie, classes }) => {
       });
       if (res.ok) {
         toast.success("Movie added to favorites");
+      } else {
+        const data = await res.json();
+        toast.error(data.message);
       }
     } catch (error) {
       toast.error("An error occurred while adding the movie to favorites");

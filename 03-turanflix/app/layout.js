@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
     <Providers>
       <html lang="en">
         <body className={inter.className}>
+          <ToastContainer style={{ marginTop: "80px" }} />
           <main className="min-h-screen relative">
             <Navbar />
-            <ToastContainer />
             {children}
             <Footer />
           </main>

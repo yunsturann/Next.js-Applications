@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "./(components)/HeroSection";
+import HeroSection from "../components/herosection/HeroSection";
 import MoviesSection from "../components/MoviesSection";
 import {
   getPopularMovies,
@@ -23,8 +23,7 @@ const Home = async () => {
   const { results: popularMovies } = popularPromise;
   const { results: upcomingMovies } = upcomingPromise;
 
-  const randomMovie =
-    popularMovies[Math.floor(Math.random() * popularMovies.length)];
+  const populars = Array.from(popularMovies);
 
   topRatedMovies.splice(6);
   popularMovies.splice(6);
@@ -35,7 +34,7 @@ const Home = async () => {
 
   return (
     <main className="h-full">
-      <HeroSection movie={randomMovie} />
+      <HeroSection movies={populars} />
 
       <div className="bg-gray-900 text-white py-12 sm:py-16 space-y-12 ">
         <MoviesSection

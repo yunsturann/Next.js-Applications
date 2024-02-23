@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaHeart } from "react-icons/fa";
-import Genres from "./Genres";
 import HeartButton from "@/components/ui/HeartButton";
 
-const HeroSection = ({ movie }) => {
+const HeroItem = ({ movie }) => {
   return (
-    <section className="h-screen relative flex justify-center items-end">
+    <article className="h-full flex items-end justify-end">
       {/*Image & Overlay */}
       <Image
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
@@ -17,7 +15,7 @@ const HeroSection = ({ movie }) => {
       {/*bottom overlay gradient */}
       <div className="absolute bottom-0 -z-10 h-2/3 w-full bg-gradient-to-t from-black to-transparent"></div>
       {/*Content */}
-      <div className="container text-white space-y-4 h-1/2 flex flex-col justify-between mb-16">
+      <div className="container text-white space-y-4 h-1/2 flex flex-col justify-center ">
         {/*About Movie */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold md:w-2/3 mb-4">
@@ -37,11 +35,9 @@ const HeroSection = ({ movie }) => {
             <HeartButton movie={movie} classes={"h-14 w-14 lg:h-16 lg:w-16"} />
           </div>
         </div>
-        {/*genres / categories */}
-        <Genres />
       </div>
-    </section>
+    </article>
   );
 };
 
-export default HeroSection;
+export default HeroItem;
