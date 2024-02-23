@@ -18,7 +18,7 @@ const HeroSection = ({ movies }) => {
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
           delay: 5000,
-          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
         }}
         className="w-full h-full"
       >

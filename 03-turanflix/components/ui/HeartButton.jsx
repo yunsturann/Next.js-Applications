@@ -23,6 +23,7 @@ const HeartButton = ({ movie, classes }) => {
         toast.success("Movie added to favorites");
       } else {
         const data = await res.json();
+
         toast.error(data.message);
       }
     } catch (error) {

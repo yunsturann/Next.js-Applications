@@ -1,13 +1,27 @@
 import Movie from "@/models/Movie";
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
-export async function POST(req) {
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "@/lib/authOptions";
+
+export async function POST(req, res) {
   const { movie, userId } = await req.json();
 
+  //! I addded middleware to check if user is authenticated so that it is not needed to check it here
+
+  // const session = await getServerSession(authOptions);
+  // if (!session)
+  //   return NextResponse.json(
+  //     { success: false, message: "Unauthorized" },
+  //     { status: 401 }
+  //   );
+
+  // Add genre_ids to movie object
   if (movie.genres) {
     movie.genre_ids = movie.genres.map((genre) => genre.id);
   }
-
+  // Create new movie object in order to use '...' spread operator. It increase readability
   const newMovie = {
     id: movie.id,
     genre_ids: movie.genre_ids,
@@ -28,6 +42,7 @@ export async function POST(req) {
       );
     // Create new movie if it doesn't exist
     await Movie.create({ ...newMovie });
+    revalidatePath("/profile");
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
     return NextResponse.json(

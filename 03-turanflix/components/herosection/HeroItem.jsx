@@ -4,7 +4,7 @@ import HeartButton from "@/components/ui/HeartButton";
 
 const HeroItem = ({ movie }) => {
   return (
-    <article className="h-full flex items-end justify-end">
+    <article className="h-full flex items-end justify-end relative">
       {/*Image & Overlay */}
       <Image
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
@@ -18,9 +18,7 @@ const HeroItem = ({ movie }) => {
       <div className="container text-white space-y-4 h-1/2 flex flex-col justify-center ">
         {/*About Movie */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold md:w-2/3 mb-4">
-            {movie?.title}
-          </h1>
+          <h2 className="heading_one md:w-2/3 mb-4">{movie?.title}</h2>
           <p className="text-base md:text-lg lg:text-xl md:w-2/3 font-semibold line-clamp-2">
             {movie?.overview}
           </p>

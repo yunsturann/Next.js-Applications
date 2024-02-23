@@ -5,7 +5,7 @@ const CategoryContainer = ({ title, movies }) => {
   // const randomMovie = movies[Math.floor(Math.random() * movies.length)];
 
   return (
-    <section className="min-h-screen  text-white  relative">
+    <section className="min-h-screen text-white relative">
       {/*bg color*/}
       <div className="absolute inset-0 bg-gray-900 -z-50"></div>
       {/*Image */}

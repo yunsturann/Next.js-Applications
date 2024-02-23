@@ -32,7 +32,7 @@ const Navbar = () => {
       router.push("/");
       setTimeout(() => {
         signOut();
-      }, 2000);
+      }, 500);
     } else {
       signOut();
     }
@@ -62,7 +62,7 @@ const Navbar = () => {
         {/*Logo and Brand */}
         <Link href={"/"}>
           <h1
-            className="text-2xl lg:text-3xl font-bold sm:tracking-widest cursor-pointer text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-blue-200 "
+            className="text-2xl lg:text-3xl font-bold sm:tracking-wider cursor-pointer gradient_red_to_blue "
             title="homepage"
           >
             TURANFLIX
@@ -114,9 +114,7 @@ const Navbar = () => {
                   height={20}
                   className="object-contain"
                 />
-                <span className="text-transparent bg-gradient-to-r bg-clip-text from-blue-600 via-yellow-600  to-red-600">
-                  Login
-                </span>
+                <span className="gradient_google">Login</span>
               </button>
             ))
           )}
@@ -168,9 +166,7 @@ const Navbar = () => {
                       height={20}
                       className="object-contain"
                     />
-                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-blue-600 via-yellow-600  to-red-600">
-                      Login
-                    </span>
+                    <span className="gradient_google">Login</span>
                   </button>
                 ))
               )}

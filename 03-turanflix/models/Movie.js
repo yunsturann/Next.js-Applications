@@ -14,6 +14,7 @@ export const movieSchema = new Schema(
     },
     title: {
       type: String,
+      required: true,
     },
     vote_average: {
       type: Number,

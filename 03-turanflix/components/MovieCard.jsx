@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-
 import allGenres from "@/contants/genres";
 import Link from "next/link";
 import { MotionDiv } from "./MotionDiv";
+import HeartBrokenButton from "./ui/HeartBrokenButton";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -31,13 +31,13 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
       }}
       viewport={{ amount: 0 }}
     >
-      <Link
-        href={`/movies/${movie.id}`}
-        className="cursor-pointer"
-        style={{ display: "contents" }}
-        prefetch={prefetch}
-      >
-        <article className="group hover:scale-110 space-y-3 transition-transform duration-300 h-full ">
+      <article className="group hover:scale-105 space-y-2 transition-transform duration-300 h-full relative flex flex-col justify-between">
+        <Link
+          href={`/movies/${movie.id}`}
+          style={{ display: "contents" }}
+          prefetch={prefetch}
+          className="space-y-3 cursor-pointer"
+        >
           {/*Image */}
           {movie.poster_path ? (
             <Image
@@ -48,13 +48,17 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
               className="rounded-xl"
             />
           ) : (
-            <div className="bg-black h-3/4 rounded-xl grid place-items-center">
-              image-not-found
-            </div>
+            <Image
+              src={"/images/404.jpg"}
+              alt="movie-img"
+              height={380}
+              width={320}
+              className="rounded-xl object-cover h-full"
+            />
           )}
 
           {/*About movie*/}
-          <div className=" space-y-1 ">
+          <div className="space-y-1 ">
             <div className="flex justify-between items-start gap-2 ">
               <h3 className="text-lg font-semibold leading-6 line-clamp-3">
                 {movie.title}
@@ -71,8 +75,9 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
               <p>{movie.release_date.slice(0, 4)}</p>
             </div>
           </div>
-        </article>
-      </Link>
+        </Link>
+        {movie._id && <HeartBrokenButton movieId={movie._id} />}
+      </article>
     </MotionDiv>
   );
 };
