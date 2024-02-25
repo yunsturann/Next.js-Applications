@@ -4,9 +4,10 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import GenresButton from "../ui/GenresButton";
 import { usePathname, useRouter } from "next/navigation";
+import GenresButton from "../ui/GenresButton";
 import Search from "./Search";
+import ProfileDropdown from "./ProfileDropdown";
 
 let lastPosition = 0;
 
@@ -58,8 +59,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-gray-950 bg-opacity-95 py-2  lg:py-6 ">
-      <div className="container flex max-lg:flex-wrap justify-between items-center text-white space-y-1 sm:space-y-2">
+    <header className="fixed top-0 z-50 w-full bg-gray-950 bg-opacity-95  ">
+      <div className="container flex max-lg:flex-wrap justify-between items-center text-white space-y-1 sm:space-y-2  py-2 lg:py-5 relative">
         {/*Logo and Brand */}
         <Link href={"/"}>
           <h1
@@ -69,56 +70,29 @@ const Navbar = () => {
             TURANFLIX
           </h1>
         </Link>
+
+        {/* SEARCH BAR */}
         <Search showDropdown={showDropdown} />
+
         {/*Desktop Nav */}
         <nav className="navbar hidden lg:flex items-center gap-3 xl:gap-6 xl:text-lg">
+          {/* GENRES BUTTON & DROPDOWN */}
           <GenresButton />
-
-          {session ? (
-            <>
-              <button
-                onClick={() => {
-                  router.push("/profile");
-                  router.refresh();
-                }}
-                className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
-              >
-                Profile
-              </button>
-              <button
-                className="bg-white text-black px-4 py-2 rounded-xl font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
-                onClick={handleSignOut}
-              >
-                SignOut
-              </button>
-              <Image
-                src={profileImg || "/images/avatar.png"}
-                alt="profile-avatar"
-                width={45}
-                height={45}
-                className="rounded-full "
-              />
-            </>
-          ) : (
-            providers &&
-            Object.values(providers).map((provider, index) => (
-              <button
-                key={index}
-                onClick={() => signIn(provider.id)}
-                className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-xl text-lg font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
-              >
-                <Image
-                  src={"/images/google.png"}
-                  alt="google"
-                  aria-label="google-login"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
-                <span className="gradient_google">Login</span>
-              </button>
-            ))
-          )}
+          {/* CONTACT PAGE LINK*/}
+          <Link
+            href={"/contact"}
+            className="font-semibold p-2 hover:bg-gray-800 rounded-xl transition duration-300 "
+          >
+            Contact
+          </Link>
+          {/* PROFILE DROPDOWN*/}
+          <ProfileDropdown
+            session={session}
+            handleSignOut={handleSignOut}
+            providers={providers}
+            profileImg={profileImg}
+            signIn={signIn}
+          />
         </nav>
 
         {/*MOBILE NAV */}
@@ -134,7 +108,7 @@ const Navbar = () => {
           {/*HAMBURGER DROPDOWN */}
 
           {showDropdown && (
-            <div className="absolute top-full mt-0.5 w-2/3 right-4 bg-gray-800 bg-opacity-95 text-white rounded-2xl flex flex-col gap-4 items-center p-4 ">
+            <div className="absolute top-full mt-1 w-4/5 max-w-[300px] right-4 bg-gray-950 text-white rounded-2xl flex flex-col gap-4 items-center p-4 ">
               {session ? (
                 <>
                   <Image
@@ -183,12 +157,21 @@ const Navbar = () => {
                   Profile
                 </button>
               )}
+              <button
+                onClick={() => {
+                  setShowDropdown(false);
+                  router.push("/contact");
+                  router.refresh();
+                }}
+                className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
+              >
+                Contact
+              </button>
               <GenresButton />
             </div>
           )}
         </nav>
       </div>
-      {/* Search */}
     </header>
   );
 };

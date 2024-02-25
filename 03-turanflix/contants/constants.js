@@ -1,7 +1,7 @@
 export const navItems = [
   {
-    text: "Genres",
-    href: "/",
+    text: "Contact",
+    href: "/contact",
   },
   {
     text: "Profile",

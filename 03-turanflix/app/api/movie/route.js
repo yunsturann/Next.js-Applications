@@ -1,20 +1,18 @@
 import Movie from "@/models/Movie";
 import { NextResponse } from "next/server";
-
 // import { getServerSession } from "next-auth";
 // import { authOptions } from "@/lib/authOptions";
 
 export async function POST(req, res) {
   const { movie, userId } = await req.json();
-
-  //! I addded middleware to check if user is authenticated so that it is not needed to check it here
-
+  // it is protected from middleware, so no need to check again
   // const session = await getServerSession(authOptions);
-  // if (!session)
+  // if (!session) {
   //   return NextResponse.json(
   //     { success: false, message: "Unauthorized" },
   //     { status: 401 }
   //   );
+  // }
 
   // Add genre_ids to movie object
   if (movie.genres) {

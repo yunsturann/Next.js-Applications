@@ -3,9 +3,11 @@ import { Inter } from "next/font/google";
 // css
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
+// components
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+// libs
 import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +27,7 @@ export default function RootLayout({ children }) {
     <Providers>
       <html lang="en">
         <body className={inter.className}>
-          <ToastContainer style={{ marginTop: "80px" }} />
+          <ToastContainer style={{ marginTop: "90px" }} />
           <main
             id="main"
             className="min-h-screen flex flex-col justify-between relative"

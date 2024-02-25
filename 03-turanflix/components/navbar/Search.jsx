@@ -1,9 +1,8 @@
 "use client";
 
 import { getSearchResults } from "@/services/movie";
-import { set } from "mongoose";
 import Image from "next/image";
-import Link from "next/link";
+import { FaRegTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -18,6 +17,7 @@ const Search = ({ showDropdown }) => {
     if (showDropdown) {
       setSearchTerm("");
     }
+    // add debounce
     // debounce not to make request for every key stroke
     const timeoutId = setTimeout(() => {
       getSearchResults(searchTerm).then((res) => {
@@ -33,7 +33,7 @@ const Search = ({ showDropdown }) => {
   };
 
   return (
-    <section className="flex w-full lg:w-72 xl:w-96 max-lg:order-last relative">
+    <section className="flex w-full lg:w-80 xl:w-96 max-lg:order-last relative">
       {/* INPUT FOR SEARCH */}
       <input
         type="text"
@@ -41,9 +41,18 @@ const Search = ({ showDropdown }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className={`w-full py-2 px-4 bg-gray-800 bg-opacity-90 ${
-          searchTerm ? "rounded-t-lg" : "rounded-lg"
+          searchTerm ? "rounded-tl-lg" : "rounded-l-lg"
         } text-white focus:outline-none`}
       />
+      <div
+        className={`bg-gradient-to-l from-gray-700 to-gray-800 hover:opacity-70 hover:text-rose-400 flex items-center px-3 py-2 text-lg cursor-pointer transition duration-300 ${
+          searchTerm ? "rounded-tr-lg " : "rounded-r-lg"
+        }`}
+        onClick={() => setSearchTerm("")}
+      >
+        <FaRegTrashAlt />
+      </div>
+
       {/* Searched Movies DROPDOWN */}
       {searchTerm && (
         <div className="absolute z-30 top-full w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-y-scroll bg-gray-800/95 flex flex-col gap-4 rounded-b-lg p-2">
@@ -52,7 +61,7 @@ const Search = ({ showDropdown }) => {
             searchedMovies.map((movie, index) => (
               <article
                 key={index}
-                className="flex gap-3 min-h-[120px] h-[120px] p-2 rounded-lg hover:bg-gray-900 transition duration-300"
+                className="flex gap-3 min-h-[120px] h-[120px] p-2 rounded-lg cursor-pointer hover:bg-gray-900 transition duration-300"
                 onClick={() => handleMovieClick(movie.id)}
               >
                 {/* LEFT PART, IMAGE  */}

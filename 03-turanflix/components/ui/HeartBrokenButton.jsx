@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteFromFavorites } from "@/app/actions/actions";
+import { deleteFromFavorites } from "@/actions/actions";
 import { FaHeartBroken } from "react-icons/fa";
 import { useFormStatus, useFormState } from "react-dom";
 import { useEffect } from "react";
