@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 // css
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 import { ToastContainer } from "react-toastify";
@@ -26,7 +26,10 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inter.className}>
           <ToastContainer style={{ marginTop: "80px" }} />
-          <main className="min-h-screen flex flex-col justify-between relative">
+          <main
+            id="main"
+            className="min-h-screen flex flex-col justify-between relative"
+          >
             <Navbar />
             {children}
             <Footer />

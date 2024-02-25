@@ -1,6 +1,5 @@
 import Movie from "@/models/Movie";
 import { NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
 
 // import { getServerSession } from "next-auth";
 // import { authOptions } from "@/lib/authOptions";
@@ -42,7 +41,6 @@ export async function POST(req, res) {
       );
     // Create new movie if it doesn't exist
     await Movie.create({ ...newMovie });
-    revalidatePath("/profile");
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
     return NextResponse.json(

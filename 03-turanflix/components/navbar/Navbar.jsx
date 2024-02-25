@@ -4,8 +4,9 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import GenresButton from "./ui/GenresButton";
+import GenresButton from "../ui/GenresButton";
 import { usePathname, useRouter } from "next/navigation";
+import Search from "./Search";
 
 let lastPosition = 0;
 
@@ -57,35 +58,35 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-gray-950 bg-opacity-95">
-      <div className="container flex flex-wrap justify-between items-center py-6 text-white">
+    <header className="fixed top-0 z-50 w-full bg-gray-950 bg-opacity-95 py-2  lg:py-6 ">
+      <div className="container flex max-lg:flex-wrap justify-between items-center text-white space-y-1 sm:space-y-2">
         {/*Logo and Brand */}
         <Link href={"/"}>
           <h1
-            className="text-2xl lg:text-3xl font-bold sm:tracking-wider cursor-pointer gradient_red_to_blue "
+            className="text-2xl lg:text-3xl font-bold sm:tracking-wider cursor-pointer gradient_red_to_blue"
             title="homepage"
           >
             TURANFLIX
           </h1>
         </Link>
-
+        <Search showDropdown={showDropdown} />
         {/*Desktop Nav */}
-        <nav className="navbar hidden sm:flex items-center gap-2 lg:gap-6 md:text-lg">
+        <nav className="navbar hidden lg:flex items-center gap-3 xl:gap-6 xl:text-lg">
           <GenresButton />
-
-          {session && (
-            <Link
-              href={"/profile"}
-              className=" font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
-            >
-              Profile
-            </Link>
-          )}
 
           {session ? (
             <>
               <button
-                className="bg-white text-black px-4 py-2 rounded-xl  font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
+                onClick={() => {
+                  router.push("/profile");
+                  router.refresh();
+                }}
+                className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
+              >
+                Profile
+              </button>
+              <button
+                className="bg-white text-black px-4 py-2 rounded-xl font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
                 onClick={handleSignOut}
               >
                 SignOut
@@ -95,7 +96,7 @@ const Navbar = () => {
                 alt="profile-avatar"
                 width={45}
                 height={45}
-                className="rounded-full hidden lg:block"
+                className="rounded-full "
               />
             </>
           ) : (
@@ -122,7 +123,7 @@ const Navbar = () => {
 
         {/*MOBILE NAV */}
 
-        <nav className="navbar flex sm:hidden ">
+        <nav className="navbar flex lg:hidden ">
           <button
             type="button"
             className="hover:text-rose-500 transition duration-300"
@@ -171,18 +172,23 @@ const Navbar = () => {
                 ))
               )}
               {session && (
-                <Link
-                  href={"/profile"}
-                  className="text-lg font-semibold py-2 tracking-wide cursor-pointer hover:text-black hover:bg-white w-full text-center rounded-xl transition duration-300"
+                <button
+                  onClick={() => {
+                    setShowDropdown(false);
+                    router.push("/profile");
+                    router.refresh();
+                  }}
+                  className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
                 >
                   Profile
-                </Link>
+                </button>
               )}
               <GenresButton />
             </div>
           )}
         </nav>
       </div>
+      {/* Search */}
     </header>
   );
 };

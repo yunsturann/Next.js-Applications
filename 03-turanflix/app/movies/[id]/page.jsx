@@ -4,7 +4,7 @@ import HeartButton from "@/components/ui/HeartButton";
 import { getReviews, getSignleMovie } from "@/services/movie";
 import Image from "next/image";
 import Link from "next/link";
-import { FaHeart, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const Movie = async ({ params, searchParams }) => {
   const { id } = params;
@@ -42,10 +42,10 @@ const Movie = async ({ params, searchParams }) => {
             />
 
             {/*Header of the movie*/}
-            <header className="flex justify-between items-start flex-wrap gap-4 text-gray-400">
+            <header className="flex justify-between items-start max-xl:flex-wrap gap-4 text-gray-400">
               {/*Titles section */}
               <div>
-                <h1 className="text-white text-2xl sm:text-3xl font-bold">
+                <h1 className="text-white text-2xl sm:text-3xl font-bold ">
                   {movie.title}
                 </h1>
                 <p>Original title: {movie.original_title}</p>
@@ -53,7 +53,7 @@ const Movie = async ({ params, searchParams }) => {
               </div>
               {/*IMDb section */}
               <div className="text-gray-400 ">
-                <p className="uppercase ">imdb rating</p>
+                <p className="uppercase text-nowrap">imdb rating</p>
                 <div className="flex items-center justify-between bg-gray-700 hover:bg-gray-600 rounded-lg p-1 px">
                   <FaStar size={32} color="orange" />
                   <div>
@@ -63,7 +63,7 @@ const Movie = async ({ params, searchParams }) => {
                       </span>
                       /10
                     </p>
-                    <p>{movie.vote_count}K</p>
+                    <p title="Votes">{movie.vote_count / 1000}K</p>
                   </div>
                 </div>
               </div>

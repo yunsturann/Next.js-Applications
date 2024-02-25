@@ -83,3 +83,17 @@ export const getWithGenre = async (genreId, page = 1) => {
     console.log(error);
   }
 };
+
+export const getSearchResults = async (searchTerm) => {
+  try {
+    if (!searchTerm) return;
+
+    const res = await fetch(
+      `${API_URL}/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${searchTerm}&language=en-US`
+    );
+
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};

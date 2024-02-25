@@ -4,9 +4,8 @@ import { getServerSession } from "next-auth";
 
 const getFavoriteMovies = async (id) => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/api/user/${id}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(`${process.env.BASE_URL}/api/user/${id}`);
+
     if (!res.ok) return;
     return res.json();
   } catch (error) {

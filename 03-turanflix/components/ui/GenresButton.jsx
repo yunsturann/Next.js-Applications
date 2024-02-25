@@ -43,7 +43,7 @@ const GenresButton = () => {
     <>
       {/* GENRES Button */}
       <button
-        className=" flex items-center gap-2 px-4 py-2 rounded-xl text-base md:text-lg font-semibold tracking-wide cursor-pointer hover:bg-gray-800 transition duration-300"
+        className="flex items-center gap-2 px-4 py-2 rounded-xl text-base xl:text-lg font-semibold tracking-wide cursor-pointer hover:bg-gray-800 transition duration-300"
         onClick={handleShowGenres}
       >
         Genres
