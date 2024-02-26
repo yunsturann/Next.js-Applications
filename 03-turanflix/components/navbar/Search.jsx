@@ -17,7 +17,6 @@ const Search = ({ showDropdown }) => {
     if (showDropdown) {
       setSearchTerm("");
     }
-    // add debounce
     // debounce not to make request for every key stroke
     const timeoutId = setTimeout(() => {
       getSearchResults(searchTerm).then((res) => {
@@ -41,17 +40,17 @@ const Search = ({ showDropdown }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className={`w-full py-2 px-4 bg-gray-800 bg-opacity-90 ${
-          searchTerm ? "rounded-tl-lg" : "rounded-l-lg"
+          searchTerm ? "rounded-tl-lg" : "rounded-lg"
         } text-white focus:outline-none`}
       />
-      <div
-        className={`bg-gradient-to-l from-gray-700 to-gray-800 hover:opacity-70 hover:text-rose-400 flex items-center px-3 py-2 text-lg cursor-pointer transition duration-300 ${
-          searchTerm ? "rounded-tr-lg " : "rounded-r-lg"
-        }`}
-        onClick={() => setSearchTerm("")}
-      >
-        <FaRegTrashAlt />
-      </div>
+      {searchTerm && (
+        <div
+          className={`bg-gradient-to-l from-gray-700 to-gray-800 hover:opacity-70 hover:text-rose-400 flex items-center px-3 py-2 text-lg cursor-pointer transition duration-300 rounded-tr-lg`}
+          onClick={() => setSearchTerm("")}
+        >
+          <FaRegTrashAlt />
+        </div>
+      )}
 
       {/* Searched Movies DROPDOWN */}
       {searchTerm && (

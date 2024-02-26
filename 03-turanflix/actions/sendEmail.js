@@ -1,6 +1,7 @@
 "use server";
 import nodemailer from "nodemailer";
 
+// sendEmail action to send an email from the contact form
 export const sendEmail = async (prevState, formData) => {
   const { username, email, subject, message } = Object.fromEntries(formData);
   const SMTP_EMAIL = process.env.SMTP_EMAIL;

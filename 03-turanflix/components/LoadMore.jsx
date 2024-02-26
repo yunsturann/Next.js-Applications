@@ -1,5 +1,4 @@
 "use client";
-import genres from "@/contants/genres";
 import {
   getPopularMovies,
   getTopRated,
@@ -39,6 +38,8 @@ const LoadMore = ({ title, initialMovies }) => {
         const id = pathname.split("/")[2];
         const { results } = await getWithGenre(id, page);
         setMovies([...movies, ...results]);
+      } else {
+        return;
       }
       page++;
     }
@@ -51,11 +52,7 @@ const LoadMore = ({ title, initialMovies }) => {
     <>
       {/*MOVIES*/}
       <MoviesSection title={title} movies={movies} showAll={true} />
-      {/* <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-x-4 gap-y-8">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div> */}
+
       {/*LOADMORE SVG */}
       <div className="flex justify-center py-12" ref={ref}>
         <Image

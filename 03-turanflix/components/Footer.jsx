@@ -1,7 +1,6 @@
-import { navItems } from "@/contants/constants";
+import { navItems, socialLinks } from "@/contants/constants";
 import Link from "next/link";
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -30,36 +29,19 @@ const Footer = () => {
           <p>Yunus Turan</p>
           {/* Links*/}
           <div className="flex gap-5 items-center text-3xl">
-            {/* Github */}
-            <Link
-              href={"https://github.com/yunsturann"}
-              aria-label="Github"
-              title="Github"
-              target="_blank"
-              className="hover:text-yellow-500 transition duration-300"
-            >
-              <FaGithub />
-            </Link>
-            {/* Linkedin */}
-            <Link
-              href={"https://www.linkedin.com/in/yunus-turan-bb256a1b6/"}
-              aria-label="Linkedin"
-              title="Linkedin"
-              target="_blank"
-              className="hover:text-yellow-500 transition duration-300"
-            >
-              <FaLinkedin />
-            </Link>
-            {/* Website */}
-            <Link
-              href={"https://yunsturann.vercel.app/"}
-              aria-label="My Website"
-              title="My Website"
-              target="_blank"
-              className="hover:text-yellow-500 transition duration-300"
-            >
-              Y
-            </Link>
+            {/* Social Links*/}
+            {socialLinks.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                aria-label={item.text}
+                title={item.text}
+                target="_blank"
+                className="hover:text-yellow-500 transition duration-300"
+              >
+                {item.img}
+              </Link>
+            ))}
           </div>
         </div>
 

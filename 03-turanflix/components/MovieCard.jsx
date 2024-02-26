@@ -11,11 +11,16 @@ const variants = {
 };
 
 const MovieCard = ({ movie, prefetch = true, index }) => {
-  const genre = allGenres.genres.find(
-    (genre) => genre.id === movie.genre_ids[0]
-  );
+  // to set genre name
   let genreName = "";
-  if (genre) {
+  // api has lots of movies so that we need to check if the movie has a genre_id or not
+  // less error prone
+  if (movie.genre_ids.length !== 0) {
+    // this condition is to check if the movie has a genre.
+    // if the movie has a genre
+    const genre = allGenres.genres.find(
+      (genre) => genre.id === movie.genre_ids[0]
+    );
     genreName = genre.name;
   }
 
@@ -31,7 +36,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
       }}
       viewport={{ amount: 0 }}
     >
-      <article className="group hover:scale-105 space-y-2 transition-transform duration-300 h-full relative flex flex-col justify-between">
+      <article className="group hover:scale-105 space-y-2 transition-transform duration-300 h-full relative flex flex-col ">
         <Link
           href={`/movies/${movie.id}`}
           style={{ display: "contents" }}
@@ -45,7 +50,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
               alt="movie-img"
               height={380}
               width={320}
-              className="rounded-xl"
+              className="rounded-xl md:min-h-[350px] "
             />
           ) : (
             <Image
@@ -53,7 +58,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
               alt="movie-img"
               height={380}
               width={320}
-              className="rounded-xl object-cover h-full"
+              className="rounded-xl object-cover h-full md:min-h-[350px]"
             />
           )}
 
@@ -76,6 +81,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
             </div>
           </div>
         </Link>
+        {/* movie._id means user is in the profile page, so that show the button */}
         {movie._id && <HeartBrokenButton movieId={movie._id} />}
       </article>
     </MotionDiv>

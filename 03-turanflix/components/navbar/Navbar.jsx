@@ -34,7 +34,7 @@ const Navbar = () => {
       router.push("/");
       setTimeout(() => {
         signOut();
-      }, 500);
+      }, 700);
     } else {
       signOut();
     }

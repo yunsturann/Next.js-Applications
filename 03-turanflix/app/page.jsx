@@ -13,6 +13,7 @@ const Home = async () => {
   // const { results: upcomingMovies } = await getUpcomingMovies(1);
 
   //! parallel data fetching is more efficent
+  //.allSettled is another option to wait for all promises to resolve also, it will return all promises whether they are resolved or rejected
   const [topRatedPromise, popularPromise, upcomingPromise] = await Promise.all([
     getTopRated(1),
     getPopularMovies(1),
@@ -28,9 +29,6 @@ const Home = async () => {
   topRatedMovies.splice(6);
   popularMovies.splice(6);
   upcomingMovies.splice(6);
-
-  // const randomIndex = Math.floor(Math.random() * popularMovies.length);
-  // console.log(popularMovies[randomIndex]);
 
   return (
     <main className="h-full">

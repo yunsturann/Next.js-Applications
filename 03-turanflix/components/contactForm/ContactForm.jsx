@@ -40,12 +40,16 @@ const ContactForm = () => {
       <h2 className="text-4xl font-semibold mb-4">
         <span className="gradient_red_to_blue">Contact US</span>
       </h2>
+
       {/*USERNAME*/}
       <ContactInput name="username" maxLen={50} required />
+
       {/*EMAIL*/}
       <ContactInput name="email" type="email" maxLen={80} />
+
       {/*SUBJECT*/}
       <ContactInput name="subject" maxLen={100} />
+
       {/*MESSAGE*/}
       <textarea
         name="message"
@@ -55,6 +59,7 @@ const ContactForm = () => {
         maxLength={400}
         className="bg-gray-600 rounded-md h-60 p-4 w-full text-lg text-white appearance-none focus:outline-none focus:ring-0 resize-none"
       />
+
       {/*SUBMIT*/}
       <SubmitButton />
     </form>

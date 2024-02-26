@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 03-turanflix
 
-## Getting Started
+[tmdb api](https://www.themoviedb.org/)
 
-First, run the development server:
+- Dynamic title & descriptions for every page to increase SEO
+- Parallel data fetching is essential to save time. All promises runs in parallel, they dont wait for each other.
+- server actions to connect db without api routes.
+  - deleteFromFavorites deletes the favorited movie clicked
+  - sendEmail action to send an email from the contact form
+- I used useFormState & useFromStatus to handle forms.
+  - useFormState provides a state to show errors when clicked or successful message can be handled.
+  - useFormStatus is required to disable the button while the form is pending
+- Movies' trailers can be watch from youtube thanks to LiteYoutubeEmbed. When user clicks, the link button changes the parameter of the url so that a new component renders to watch the movie.
+- There is a debounce in the search bar. its purpose is not to make request for every key stroke. It decreases server/api loads.
+- There are several dropdowns. They close when the user scrolls a little (-+200px). There is an event for this that will be active when the dropdown menu is opened.
+- Users can add a movie to his/her favorites but they have to login with Google.
+  - I handled this case with Next-auth. It creates session tokens when user logins successfully.
+- Unauthenticated users can't access the profile page or route handlers.
+  - There is a middleware matchers. It protects pages and apis.
+- I used swipperjs to make perfect slides.
+- framermotion is used for card animation
+  - I created a component to import and export motion.div because I want that some cards should be rendered on the server side. motion.div runs on the client.
+- Mongoose is an another perfect lib to connect mongodb and to create schemas.
+  - There are two models: User and Movie
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I made the design on my own but I was a little inspired by other movie apps because I am not a designer.
+I developed this project to improve my webdev skills with Next.js, Tailwind and MongoDB.

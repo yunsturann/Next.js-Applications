@@ -9,12 +9,12 @@ const CategoryContainer = ({ title, movies }) => {
       {/*bg color*/}
       <div className="absolute inset-0 bg-gray-900 -z-50"></div>
       {/*Image */}
-      <div className="fixed h-screen w-full -z-30 opacity-50 ">
+      <div className="fixed h-screen w-full -z-30 opacity-60 ">
         <Image
           src={`https://image.tmdb.org/t/p/original${randomMovie.backdrop_path}`}
           alt="bg-image"
           fill
-          className="blur-sm"
+          className="blur-md"
           priority={true}
         />
       </div>
