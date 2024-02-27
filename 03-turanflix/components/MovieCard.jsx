@@ -35,8 +35,9 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
         duration: 0.5,
       }}
       viewport={{ amount: 0 }}
+      className="flex flex-col justify-between space-y-2 hover:scale-105 transition-transform duration-300"
     >
-      <article className="group hover:scale-105 space-y-2 transition-transform duration-300 h-full relative flex flex-col ">
+      <article className="group space-y-2 h-full relative flex flex-col justify-start ">
         <Link
           href={`/movies/${movie.id}`}
           style={{ display: "contents" }}
@@ -65,7 +66,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
           {/*About movie*/}
           <div className="space-y-1 ">
             <div className="flex justify-between items-start gap-2 ">
-              <h3 className="text-lg font-semibold leading-6 line-clamp-3">
+              <h3 className="text-lg font-semibold leading-6 line-clamp-2">
                 {movie.title}
               </h3>
               <p className="bg-amber-800 px-1 py-0.5 rounded-md ">
@@ -81,9 +82,9 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
             </div>
           </div>
         </Link>
-        {/* movie._id means user is in the profile page, so that show the button */}
-        {movie._id && <HeartBrokenButton movieId={movie._id} />}
       </article>
+      {/* movie._id means user is in the profile page, so that show the button */}
+      {movie._id && <HeartBrokenButton movieId={movie._id} />}
     </MotionDiv>
   );
 };
