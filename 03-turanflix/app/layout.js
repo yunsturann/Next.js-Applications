@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 // libs
 import { ToastContainer } from "react-toastify";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
             {children}
             <Footer />
           </main>
+          <Analytics />
         </body>
       </html>
     </Providers>
