@@ -12,7 +12,7 @@ const HeartButton = ({ movie, classes }) => {
       return;
     }
     try {
-      const res = await fetch("/api/movie", {
+      const res = await fetch("/api/movies", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,6 +36,7 @@ const HeartButton = ({ movie, classes }) => {
       type="button"
       className={`border-2 rounded-full  flex justify-center items-center text-white hover:text-rose-500 hover:border-red-400 transition duration-300 ${classes}`}
       onClick={handleClick}
+      aria-label="Add to favorites"
     >
       <FaHeart />
     </button>

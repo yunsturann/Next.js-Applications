@@ -2,16 +2,14 @@
 
 import connectToDb from "@/lib/database";
 import Movie from "@/models/Movie";
-import { revalidatePath } from "next/cache";
 
 export const deleteFromFavorites = async (prevState, formData) => {
-  const movieId = formData.get("movieId");
+  const { movieId } = Object.fromEntries(formData);
 
   try {
     await connectToDb();
     await Movie.findByIdAndDelete(movieId);
-    revalidatePath("/profile");
-    return { success: "Movie removed from favorites" };
+    return { success: true }; // revalidatePath already returns a promise
   } catch (error) {
     return { error: "Failed to remove movie from favorites" };
   }

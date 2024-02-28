@@ -17,14 +17,14 @@ const HeroSection = ({ movies }) => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
-          delay: 5000,
+          delay: 6000,
           pauseOnMouseEnter: true,
         }}
         className="w-full h-full"
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={index}>
-            <HeroItem movie={movie} />
+            <HeroItem movie={movie} index={index} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeartButton from "@/components/ui/HeartButton";
 
-const HeroItem = ({ movie }) => {
+const HeroItem = ({ movie, index }) => {
   return (
     <article className="h-full flex items-end justify-end relative">
       {/*Image & Overlay */}
@@ -11,6 +11,7 @@ const HeroItem = ({ movie }) => {
         alt="bg-image-hero"
         fill
         className="-z-20 object-cover"
+        priority={index < 2 ? true : false}
       />
       {/*bottom overlay gradient */}
       <div className="absolute bottom-0 -z-10 h-2/3 w-full bg-gradient-to-t from-black to-transparent"></div>
