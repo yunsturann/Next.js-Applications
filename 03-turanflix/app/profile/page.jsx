@@ -1,4 +1,5 @@
 "use client";
+
 import MoviesSection from "@/components/MoviesSection";
 import MovieContext from "@/context/MoviesContext";
 import { useSession } from "next-auth/react";
@@ -21,7 +22,7 @@ const ProfilePage = () => {
       setMovies(data);
     };
     if (session?.user?.id) fetchPosts();
-  }, []);
+  }, [session]);
 
   return (
     <MovieContext.Provider value={{ movies, setMovies }}>

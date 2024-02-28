@@ -50,7 +50,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               alt="movie-img"
               height={380}
-              width={320}
+              width={300}
               className="rounded-xl md:min-h-[350px] "
             />
           ) : (
@@ -58,7 +58,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
               src={"/images/404.jpg"}
               alt="movie-img"
               height={380}
-              width={320}
+              width={300}
               className="rounded-xl object-cover h-full md:min-h-[350px]"
             />
           )}
@@ -73,7 +73,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
                 {movie.vote_average.toFixed(1)}
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-x-2 text-neutral-500">
+            <div className="flex flex-wrap items-center gap-x-2 text-gray-400">
               <p className="group-hover:text-red-500 hover:text-white">
                 {genreName}
               </p>

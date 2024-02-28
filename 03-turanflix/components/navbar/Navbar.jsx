@@ -102,6 +102,7 @@ const Navbar = () => {
             type="button"
             className="hover:text-rose-500 transition duration-300"
             onClick={handleHamburger}
+            aria-label="hamburger-menu"
           >
             {showDropdown ? <IoMdClose size={32} /> : <IoMdMenu size={32} />}
           </button>

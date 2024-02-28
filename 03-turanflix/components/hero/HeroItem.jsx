@@ -11,7 +11,7 @@ const HeroItem = ({ movie, index }) => {
         alt="bg-image-hero"
         fill
         className="-z-20 object-cover"
-        priority={index < 2 ? true : false}
+        priority={index === 0 ? true : false}
       />
       {/*bottom overlay gradient */}
       <div className="absolute bottom-0 -z-10 h-2/3 w-full bg-gradient-to-t from-black to-transparent"></div>
