@@ -1,5 +1,7 @@
 export const API_URL = "https://api.themoviedb.org/3";
 
+// I will create an api service to fetch data from the movie database api
+
 export const getGenres = async () => {
   try {
     const res = await fetch(

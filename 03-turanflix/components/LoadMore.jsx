@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import spinner from "@/public/images/spinner.svg";
-import MoviesSection from "./MoviesSection";
+import MoviesSection from "./moviesSection/MoviesSection";
 import { usePathname } from "next/navigation";
 
 let page = 2;

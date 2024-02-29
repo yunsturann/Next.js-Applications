@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+let lastPosition = 0;
+
 const ProfileDropdown = ({
   session,
   handleSignOut,
@@ -12,6 +14,24 @@ const ProfileDropdown = ({
 }) => {
   const router = useRouter();
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const checkScroll = () => {
+    if (Math.abs(lastPosition - window.scrollY) > 100) {
+      setShowDropdown(false);
+      // close event not to check always, it might decrease performance
+      window.removeEventListener("scroll", checkScroll);
+    }
+  };
+
+  const handleHamburger = () => {
+    // if dropdown is open, add scroll event listener to close dropdown when user scrolls
+    const currShowDropdown = showDropdown;
+    setShowDropdown((prev) => !prev);
+    if (!currShowDropdown) {
+      lastPosition = window.scrollY;
+      window.addEventListener("scroll", checkScroll);
+    }
+  };
 
   return (
     <>
@@ -24,7 +44,7 @@ const ProfileDropdown = ({
             width={45}
             height={45}
             className="rounded-full cursor-pointer"
-            onClick={() => setShowDropdown((prev) => !prev)}
+            onClick={handleHamburger}
           />
           {/* Dropdown CONTAINER */}
           {showDropdown && (

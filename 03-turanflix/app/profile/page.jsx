@@ -1,9 +1,11 @@
 "use client";
 
-import MoviesSection from "@/components/MoviesSection";
+import MoviesSection from "@/components/moviesSection/MoviesSection";
 import MovieContext from "@/context/MoviesContext";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
+import Loading from "@/components/loading/Loading";
 
 const ProfilePage = () => {
   const { data: session } = useSession({
@@ -14,11 +16,14 @@ const ProfilePage = () => {
   });
 
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
+      setIsLoading(true);
       const res = await fetch(`/api/movies/${session?.user?.id}`);
       const data = await res.json();
+      setIsLoading(false);
       setMovies(data);
     };
     if (session?.user?.id) fetchPosts();
@@ -37,6 +42,7 @@ const ProfilePage = () => {
           <p>Here you can see your favorite movies.</p>
         </header>
         {/* <Movies movies={movies} /> */}
+        {isLoading && <Loading />}
         {movies.length > 0 && (
           <MoviesSection
             title={"Your Favorites"}

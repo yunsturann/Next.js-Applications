@@ -23,7 +23,7 @@ const Trailer = ({ video, playlistImg }) => {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-6 ">
+    <div id="trailer" className="grid grid-cols-3 gap-6 ">
       <div className="col-span-3 lg:col-span-2">
         <LiteYouTubeEmbed
           id={videoId.key}

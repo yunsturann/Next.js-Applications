@@ -1,4 +1,4 @@
-import MovieCard from "@/components/MovieCard";
+import MovieCard from "@/components/moviesSection/MovieCard";
 import Link from "next/link";
 import React from "react";
 

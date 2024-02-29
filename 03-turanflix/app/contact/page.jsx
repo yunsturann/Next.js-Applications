@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ContactPage = () => {
   return (
-    <section className="h-screen bg-gray-900 text-white ">
+    <section className="min-h-screen bg-gray-900 text-white flex justify-center items-center pt-28 pb-20">
       <div className="container flex justify-between gap-6 h-full">
         {/* LEFT SECTION, IMAGE */}
         <div className="relative basis-2/5 hidden lg:block ">

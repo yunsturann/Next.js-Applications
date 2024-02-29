@@ -34,7 +34,7 @@ const ContactForm = () => {
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-4 w-full lg:w-4/5"
+      className="flex flex-col gap-2 sm:gap-4 w-full lg:w-4/5"
       ref={formRef}
     >
       <h2 className="text-4xl font-semibold mb-4">

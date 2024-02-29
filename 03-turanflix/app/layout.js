@@ -5,7 +5,7 @@ import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 // components
 import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer/Footer";
 import Providers from "@/components/Providers";
 // libs
 import { ToastContainer } from "react-toastify";

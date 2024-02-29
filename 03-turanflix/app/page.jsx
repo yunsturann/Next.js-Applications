@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "@/components/hero/HeroSection";
-import MoviesSection from "@/components/MoviesSection";
+import MoviesSection from "@/components/moviesSection/MoviesSection";
 import {
   getPopularMovies,
   getTopRated,

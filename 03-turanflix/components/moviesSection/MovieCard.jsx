@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import allGenres from "@/contants/genres";
 import Link from "next/link";
-import { MotionDiv } from "./MotionDiv";
-import HeartBrokenButton from "./ui/HeartBrokenButton";
+import { MotionDiv } from "../MotionDiv";
+import HeartBrokenButton from "../ui/HeartBrokenButton";
 
 const variants = {
   hidden: { opacity: 0 },
