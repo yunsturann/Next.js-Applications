@@ -1,13 +1,30 @@
 import website from "../public/assets/images/website.png";
-import drumkit from "../public/assets/images/drumkit.png";
-import quoteGen from "../public/assets/images/quoteGen.png";
 import todoV2 from "../public/assets/images/todoV2.png";
 import weather from "../public/assets/images/weather.png";
 import miniBlog from "../public/assets/images/mini-blog.png";
+import coffee from "../public/assets/images/coffee.png";
+import turanflix from "../public/assets/images/turanflix.png";
 
 export const projectsData = [
   {
     id: 0,
+    title: "Turanflix",
+    description: "A fullstack movie app with Next.js, Tailwind and MongoDB.",
+    img: turanflix,
+    links: [
+      {
+        name: "Webpage",
+        url: "https://turanflix.vercel.app/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/yunsturann/Next.js-Applications/tree/main/03-turanflix",
+      },
+    ],
+  },
+  {
+    id: 1,
+
     title: "Website",
     description: "This is my static and responsive website.",
     img: website,
@@ -17,34 +34,18 @@ export const projectsData = [
     ],
   },
   {
-    id: 1,
-    title: "Drum Kit",
-    description: "A drum kit application with animations.",
-    img: drumkit,
-    links: [
-      {
-        name: "Webpage",
-        url: "https://yunsturann.github.io/website/Projects/Drum%20Kit/index.html",
-      },
-      {
-        name: "Github",
-        url: "https://github.com/yunsturann/website/tree/main/Projects/Drum%20Kit",
-      },
-    ],
-  },
-  {
     id: 2,
-    title: "Quote Generator",
-    description: "This is Quote Generator. Quotes can be saved.",
-    img: quoteGen,
+    title: "Animated Coffee App",
+    description: "A coffee app with AOS animations",
+    img: coffee,
     links: [
       {
         name: "Webpage",
-        url: "https://yunsturann.github.io/website/Projects/Quote%20Generator/index.html",
+        url: "https://coffee-app-animated.vercel.app/",
       },
       {
         name: "Github",
-        url: "https://github.com/yunsturann/website/tree/main/Projects/Quote%20Generator",
+        url: "https://github.com/yunsturann/web-dev-projects/tree/main/08-coffee-app",
       },
     ],
   },

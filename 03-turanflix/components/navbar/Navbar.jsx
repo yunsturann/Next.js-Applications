@@ -151,7 +151,6 @@ const Navbar = () => {
                   onClick={() => {
                     setShowDropdown(false);
                     router.push("/profile");
-                    router.refresh();
                   }}
                   className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
                 >
@@ -162,7 +161,6 @@ const Navbar = () => {
                 onClick={() => {
                   setShowDropdown(false);
                   router.push("/contact");
-                  router.refresh();
                 }}
                 className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
               >

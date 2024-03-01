@@ -53,7 +53,6 @@ const ProfileDropdown = ({
                 onClick={() => {
                   setShowDropdown(false);
                   router.push("/profile");
-                  router.refresh();
                 }}
                 className="font-semibold p-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
               >
