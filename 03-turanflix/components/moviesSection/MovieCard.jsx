@@ -47,6 +47,7 @@ const MovieCard = ({ movie, prefetch = true, index }) => {
           {/*Image */}
           {movie.poster_path ? (
             <Image
+              unoptimized // I use hobby plan :( so I can't use this feature too much
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               alt="movie-img"
               height={380}

@@ -11,6 +11,7 @@ const CategoryContainer = ({ title, movies }) => {
       {/*Image */}
       <div className="fixed h-screen w-full -z-30 opacity-60 ">
         <Image
+          unoptimized // I use hobby plan :( so I can't use this feature too much
           src={`https://image.tmdb.org/t/p/original${randomMovie.backdrop_path}`}
           alt="bg-image"
           fill

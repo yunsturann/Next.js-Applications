@@ -32,6 +32,7 @@ const Review = ({ reviews }) => {
             {/*Author avatar*/}
             <div className="h-24 w-24 relative rounded-full ">
               <Image
+                unoptimized // I use hobby plan :(
                 src={
                   review.author_details.avatar_path !== null
                     ? `https://image.tmdb.org/t/p/original/${review.author_details.avatar_path}`

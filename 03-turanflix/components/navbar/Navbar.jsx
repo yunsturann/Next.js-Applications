@@ -12,19 +12,27 @@ import ProfileDropdown from "./ProfileDropdown";
 let lastPosition = 0;
 
 const Navbar = () => {
-  const { data: session } = useSession();
+  const { data } = useSession();
   const router = useRouter();
   const pathname = usePathname();
-  const profileImg = session?.user?.image;
+  const profileImg = data?.user?.image;
 
   const [showDropdown, setShowDropdown] = useState(false);
   const [providers, setProviders] = useState(null);
+  const [session, setSession] = useState({});
 
   useEffect(() => {
     getProviders().then((res) => {
       setProviders(res);
     });
   }, []);
+
+  // if session changes, update session state
+  // it is required for production.
+  useEffect(() => {
+    console.log("session", data);
+    setSession(data);
+  }, [data]);
 
   const handleSignOut = () => {
     if (!confirm("Are you sure you want to sign out?")) return;
