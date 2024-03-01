@@ -1,5 +1,5 @@
 import Reviews from "@/components/Reviews";
-import Trailer from "@/components/Trailer";
+import Trailer from "@/components/trailer/Trailer";
 import HeartButton from "@/components/ui/HeartButton";
 import { getReviews, getSignleMovie } from "@/services/movie";
 import Image from "next/image";

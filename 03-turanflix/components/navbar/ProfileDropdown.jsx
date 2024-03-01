@@ -39,6 +39,7 @@ const ProfileDropdown = ({
         <div className="relative">
           {/*PROFILE IMG */}
           <Image
+            unoptimized
             src={profileImg || "/images/avatar.png"}
             alt="profile-avatar"
             width={45}

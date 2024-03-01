@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 let lastPosition = 0;
 
 const Navbar = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
   const pathname = usePathname();
   const profileImg = session?.user?.image;
@@ -121,6 +121,7 @@ const Navbar = () => {
               {session?.user ? (
                 <>
                   <Image
+                    unoptimized
                     src={profileImg || "/images/avatar.png"}
                     alt="profile-avatar"
                     width={45}

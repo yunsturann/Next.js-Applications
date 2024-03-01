@@ -68,6 +68,7 @@ const Search = ({ showDropdown }) => {
                   {/* Show poster path if doesnt exist, show 404.img */}
                   {movie?.poster_path ? (
                     <Image
+                      unoptimized
                       src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
                       alt={movie.title}
                       fill
