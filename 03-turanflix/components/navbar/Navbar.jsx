@@ -8,18 +8,18 @@ import { usePathname, useRouter } from "next/navigation";
 import GenresButton from "../ui/GenresButton";
 import Search from "./Search";
 import ProfileDropdown from "./ProfileDropdown";
+import { toast } from "react-toastify";
 
 let lastPosition = 0;
 
 const Navbar = () => {
-  const { data } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
   const pathname = usePathname();
-  const profileImg = data?.user?.image;
+  const profileImg = session?.user?.image;
 
   const [showDropdown, setShowDropdown] = useState(false);
   const [providers, setProviders] = useState(null);
-  const [session, setSession] = useState({});
 
   useEffect(() => {
     getProviders().then((res) => {
@@ -27,12 +27,13 @@ const Navbar = () => {
     });
   }, []);
 
-  // if session changes, update session state
-  // it is required for production.
+  // it is needed for production
   useEffect(() => {
-    console.log("session", data);
-    setSession(data);
-  }, [data]);
+    if (session?.user) {
+      toast.info("You are signed in");
+      router.refresh();
+    }
+  }, [session?.user]);
 
   const handleSignOut = () => {
     if (!confirm("Are you sure you want to sign out?")) return;
