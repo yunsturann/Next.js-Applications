@@ -23,6 +23,7 @@ const Movie = async ({ params, searchParams }) => {
           {/*LEFT AREA IMAGE*/}
           <div className="">
             <Image
+              unoptimized // I use hobby plan :( so I can't use this feature too much
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt="movie-img"
               height={320}
@@ -35,6 +36,7 @@ const Movie = async ({ params, searchParams }) => {
           <div className="flex-1 space-y-4 relative px-4">
             {/*background image*/}
             <Image
+              unoptimized // I use hobby plan :( so I can't use this feature too much
               src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
               alt="bg-img-movie"
               fill

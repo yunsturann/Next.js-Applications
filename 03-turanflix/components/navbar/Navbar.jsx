@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 let lastPosition = 0;
 
 const Navbar = () => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
   const profileImg = session?.user?.image;
@@ -133,6 +133,15 @@ const Navbar = () => {
                   >
                     SignOut
                   </button>
+                  <button
+                    onClick={() => {
+                      setShowDropdown(false);
+                      router.push("/profile");
+                    }}
+                    className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
+                  >
+                    Profile
+                  </button>
                 </>
               ) : (
                 providers &&
@@ -154,17 +163,7 @@ const Navbar = () => {
                   </button>
                 ))
               )}
-              {session && (
-                <button
-                  onClick={() => {
-                    setShowDropdown(false);
-                    router.push("/profile");
-                  }}
-                  className="font-semibold px-2 py-2 tracking-wide cursor-pointer rounded-xl hover:bg-gray-800 transition duration-300"
-                >
-                  Profile
-                </button>
-              )}
+
               <button
                 onClick={() => {
                   setShowDropdown(false);
