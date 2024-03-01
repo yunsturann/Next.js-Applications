@@ -35,7 +35,7 @@ const ProfileDropdown = ({
 
   return (
     <>
-      {session ? (
+      {session?.user ? (
         <div className="relative">
           {/*PROFILE IMG */}
           <Image

@@ -31,7 +31,6 @@ const Navbar = () => {
   useEffect(() => {
     if (session?.user) {
       toast.info("You are signed in");
-      router.refresh();
     }
   }, [session?.user]);
 
@@ -119,7 +118,7 @@ const Navbar = () => {
 
           {showDropdown && (
             <div className="absolute top-full mt-1 w-4/5 max-w-[300px] right-4 bg-gray-950 text-white rounded-2xl flex flex-col gap-4 items-center p-4 ">
-              {session ? (
+              {session?.user ? (
                 <>
                   <Image
                     src={profileImg || "/images/avatar.png"}
