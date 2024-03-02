@@ -56,7 +56,7 @@ const Movie = async ({ params, searchParams }) => {
               {/*IMDb section */}
               <div className="text-gray-400 ">
                 <p className="uppercase text-nowrap">imdb rating</p>
-                <div className="flex items-center justify-between bg-gray-700 hover:bg-gray-600 rounded-lg p-1 px">
+                <div className="flex items-center justify-between bg-gray-700 hover:bg-gray-600 rounded-lg p-1 space-x-1">
                   <FaStar size={32} color="orange" />
                   <div>
                     <p className="tracking-wide">

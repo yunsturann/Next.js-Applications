@@ -7,6 +7,7 @@ const HeroItem = ({ movie, index }) => {
     <article className="h-full flex items-end justify-end relative">
       {/*Image & Overlay */}
       <Image
+        unoptimized
         src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
         alt="bg-image-hero"
         fill
