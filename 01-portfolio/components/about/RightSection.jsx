@@ -17,10 +17,11 @@ const RightSection = () => {
             type="button"
             className={`flex-grow p-2 text-center font-semibold tracking-wider rounded-3xl transition duration-300 ${
               active === index
-                ? "text-white bg-[#fa7968]"
-                : "text-black bg-white hover:bg-slate-200"
+                ? "text-white bg-red-500"
+                : "text-black bg-white hover:bg-slate-300"
             }`}
             onClick={() => setActive(index)}
+            aria-label={item}
           >
             {item}
           </button>

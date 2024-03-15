@@ -1,9 +1,9 @@
 import website from "../public/assets/images/website.png";
-import todoV2 from "../public/assets/images/todoV2.png";
 import weather from "../public/assets/images/weather.png";
 import miniBlog from "../public/assets/images/mini-blog.png";
 import coffee from "../public/assets/images/coffee.png";
 import turanflix from "../public/assets/images/turanflix.png";
+import formStepper from "../public/assets/images/formStepper.png";
 
 export const projectsData = [
   {
@@ -25,8 +25,9 @@ export const projectsData = [
   {
     id: 1,
 
-    title: "Website",
-    description: "This is my static and responsive website.",
+    title: "Old Website",
+    description:
+      "This is my static website. Includes my js, css, html projects.",
     img: website,
     links: [
       { name: "Webpage", url: "https://yunsturann.github.io/website/" },
@@ -67,17 +68,17 @@ export const projectsData = [
   },
   {
     id: 4,
-    title: "Todo App",
+    title: "Form Stepper",
     description: "Todo by using JQuery and Bootstrap.",
-    img: todoV2,
+    img: formStepper,
     links: [
       {
         name: "Webpage",
-        url: "https://yunsturann.github.io/website/Projects/To-do-list-v2/index.html",
+        url: "https://my-form-stepper.vercel.app/",
       },
       {
         name: "Github",
-        url: "https://github.com/yunsturann/website/tree/main/Projects/To-do-list-v2",
+        url: "https://github.com/yunsturann/web-dev-projects/tree/main/10-multi-step-form",
       },
     ],
   },
