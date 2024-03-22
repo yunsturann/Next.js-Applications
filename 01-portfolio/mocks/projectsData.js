@@ -1,5 +1,5 @@
 import website from "../public/assets/images/website.png";
-import weather from "../public/assets/images/weather.png";
+import interactiveCard from "../public/assets/images/interactiveCard.png";
 import miniBlog from "../public/assets/images/mini-blog.png";
 import coffee from "../public/assets/images/coffee.png";
 import turanflix from "../public/assets/images/turanflix.png";
@@ -52,24 +52,24 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "Weather App",
-    description: "A weather app to learn fetching, JQuery and Bootstrap5.",
-    img: weather,
+    title: "Interactive Card",
+    description: "I used hook-form in details with zod validation",
+    img: interactiveCard,
     links: [
       {
         name: "Webpage",
-        url: "https://yunsturann.github.io/website/Projects/Weather/index.html",
+        url: "https://my-interactive-card.vercel.app/",
       },
       {
         name: "Github",
-        url: "https://github.com/yunsturann/website/tree/main/Projects/Weather",
+        url: "https://github.com/yunsturann/web-dev-projects/tree/main/14-interactive-card",
       },
     ],
   },
   {
     id: 4,
     title: "Form Stepper",
-    description: "Todo by using JQuery and Bootstrap.",
+    description: "A multi-step form with zod validation and useContext.",
     img: formStepper,
     links: [
       {
