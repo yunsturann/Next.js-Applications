@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import GenresButton from "../ui/GenresButton";
 import Search from "./Search";
 import ProfileDropdown from "./ProfileDropdown";
-import { toast } from "react-toastify";
+import useClickOutside from "@/hooks/useClickOutside";
 
 let lastPosition = 0;
 
@@ -20,6 +20,7 @@ const Navbar = () => {
 
   const [showDropdown, setShowDropdown] = useState(false);
   const [providers, setProviders] = useState(null);
+  const ref = useRef();
 
   useEffect(() => {
     getProviders().then((res) => {
@@ -27,10 +28,14 @@ const Navbar = () => {
     });
   }, []);
 
+  useClickOutside(ref, () => {
+    setShowDropdown(false);
+  });
+
   // it is needed for production
   useEffect(() => {
     if (session?.user) {
-      toast.info("You are signed in");
+      // toast.info("You are signed in");
     }
   }, [session?.user]);
 
@@ -117,7 +122,10 @@ const Navbar = () => {
           {/*HAMBURGER DROPDOWN */}
 
           {showDropdown && (
-            <div className="absolute top-full mt-1 w-4/5 max-w-[300px] right-4 bg-gray-950 text-white rounded-2xl flex flex-col gap-4 items-center p-4 ">
+            <div
+              ref={ref}
+              className="absolute top-full mt-1 w-4/5 max-w-[300px] right-4 bg-gray-950 text-white rounded-2xl flex flex-col gap-4 items-center p-4 "
+            >
               {session?.user ? (
                 <>
                   <Image

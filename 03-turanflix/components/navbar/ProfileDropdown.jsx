@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import useClickOutside from "@/hooks/useClickOutside";
 
 let lastPosition = 0;
 
@@ -14,6 +15,11 @@ const ProfileDropdown = ({
 }) => {
   const router = useRouter();
   const [showDropdown, setShowDropdown] = useState(false);
+  const ref = useRef();
+
+  useClickOutside(ref, () => {
+    setShowDropdown(false);
+  });
 
   const checkScroll = () => {
     if (Math.abs(lastPosition - window.scrollY) > 100) {
@@ -49,7 +55,10 @@ const ProfileDropdown = ({
           />
           {/* Dropdown CONTAINER */}
           {showDropdown && (
-            <div className="absolute top-full right-0 mt-7 bg-gray-950 w-52 flex flex-col gap-4 p-4 rounded-xl ">
+            <div
+              ref={ref}
+              className="absolute top-full right-0 mt-7 bg-gray-950 w-52 flex flex-col gap-4 p-4 rounded-xl "
+            >
               <button
                 onClick={() => {
                   setShowDropdown(false);
@@ -80,6 +89,7 @@ const ProfileDropdown = ({
             className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-xl text-lg font-semibold tracking-wide cursor-pointer hover:opacity-50 transition duration-300"
           >
             <Image
+              unoptimized
               src={"/images/google.png"}
               alt="google"
               aria-label="google-login"
