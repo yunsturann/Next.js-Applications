@@ -1,6 +1,11 @@
 "use client";
+// ** React Imports
 import React, { useState } from "react";
+
+// ** Constants
 import { aboutLinks } from "@/mocks/aboutData";
+
+// ** Custom Components
 import PersonalInfo from "./PersonalInfo";
 import PersonalDetail from "./PersonalDetail";
 import Skills from "./Skills";

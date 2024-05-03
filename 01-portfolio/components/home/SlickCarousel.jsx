@@ -1,12 +1,19 @@
 "use client";
+// ** React Imports
 import React from "react";
+
+// ** Nextjs Imports
+import Image from "next/image";
+
+// ** Third Party Components
 import Slider from "react-slick";
 
+// ** Styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// * Constants
 import { sliderData } from "@/mocks/sliderData";
-import Image from "next/image";
 
 let settings = {
   dots: true,

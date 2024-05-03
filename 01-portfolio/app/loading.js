@@ -1,5 +1,5 @@
-import LoadingComponent from "@/components/loadingComponent";
-import React from "react";
+// ** Custom Components
+import LoadingComponent from "@/components/loading-component";
 
 const Loading = () => {
   return <LoadingComponent />;

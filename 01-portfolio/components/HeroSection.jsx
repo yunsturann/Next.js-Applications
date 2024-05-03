@@ -1,4 +1,7 @@
+// ** Nextjs Imports
 import Link from "next/link";
+
+// ** React Icons
 import { FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 
 const HeroSection = ({ params }) => {

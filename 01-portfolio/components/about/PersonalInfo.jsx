@@ -1,5 +1,3 @@
-import React from "react";
-
 const PersonalInfo = () => {
   return (
     <ul className="h-full flex flex-col text-basis lg:text-lg text-gray-600 space-y-2 md:space-y-4">

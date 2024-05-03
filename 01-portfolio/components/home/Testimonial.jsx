@@ -1,4 +1,7 @@
+// ** React Imports
 import React from "react";
+
+// ** Custom Components
 import SlickCarousel from "./SlickCarousel";
 
 const Testimonial = () => {

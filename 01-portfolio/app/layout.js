@@ -1,9 +1,13 @@
+// ** Nextjs Imports
 import { Gemunu_Libre } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
+// ** CSS Imports
 import "./globals.css";
 
-import Header from "@/components/Header";
+// ** Custom Components
+import Header from "@/components/navbar";
 import Footer from "@/components/Footer";
 
 const inter = Gemunu_Libre({ subsets: ["latin"] });

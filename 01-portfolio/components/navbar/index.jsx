@@ -1,6 +1,10 @@
+// ** Nextj Imports
 import Link from "next/link";
 
+// ** Constants
 import { navLinksData } from "@/mocks/navlinks";
+
+// ** Custom Components
 import Hamburger from "./Hamburger";
 
 const Header = () => {

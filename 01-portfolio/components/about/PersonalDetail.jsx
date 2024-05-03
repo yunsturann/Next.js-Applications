@@ -1,3 +1,4 @@
+// ** Constants
 import { personalData } from "@/mocks/aboutData";
 
 const PersonalDetail = () => {

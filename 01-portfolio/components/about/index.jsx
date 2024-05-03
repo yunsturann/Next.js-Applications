@@ -1,6 +1,10 @@
+// ** Nextjs Imports
 import Image from "next/image";
-import React from "react";
+
+// ** Image Imports
 import MyImage from "@/public/assets/images/meCroped.webp";
+
+// ** Custom Components
 import RightSection from "./RightSection";
 
 const AboutSection = () => {

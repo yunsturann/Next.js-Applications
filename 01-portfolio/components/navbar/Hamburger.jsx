@@ -1,8 +1,13 @@
 "use client";
 
+// ** React Imports
 import { useState } from "react";
-import { navLinksData } from "@/mocks/navlinks";
+
+// ** Nextjs Imports
 import Link from "next/link";
+
+// ** Constants
+import { navLinksData } from "@/mocks/navlinks";
 
 const Hamburger = () => {
   const [show, setShow] = useState(false);

@@ -1,7 +1,9 @@
 "use client";
-
-import { sendMail } from "@/libs/mail";
+// ** React Imports
 import { useState } from "react";
+
+// ** Server Actions
+import { sendMail } from "@/libs/mail";
 
 const defaultFormData = {
   name: "",

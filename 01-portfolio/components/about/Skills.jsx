@@ -1,3 +1,4 @@
+// ** Custom Components
 import { aboutSkillsData } from "@/mocks/aboutData";
 
 const Skills = () => {

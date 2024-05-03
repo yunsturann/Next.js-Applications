@@ -1,5 +1,7 @@
+// ** Nextjs Imports
 import Link from "next/link";
-import React from "react";
+
+// ** Constants
 import { navLinksData } from "@/mocks/navlinks";
 
 const Footer = () => {
