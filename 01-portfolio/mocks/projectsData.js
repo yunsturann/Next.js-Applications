@@ -1,7 +1,7 @@
 import website from "../public/assets/images/website.png";
 import interactiveCard from "../public/assets/images/interactiveCard.png";
 import miniBlog from "../public/assets/images/mini-blog.png";
-import coffee from "../public/assets/images/coffee.png";
+import stract from "../public/assets/images/stract.png";
 import turanflix from "../public/assets/images/turanflix.png";
 import formStepper from "../public/assets/images/formStepper.png";
 
@@ -24,7 +24,6 @@ export const projectsData = [
   },
   {
     id: 1,
-
     title: "Old Website",
     description:
       "This is my static website. Includes my js, css, html projects.",
@@ -36,17 +35,17 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Animated Coffee App",
-    description: "A coffee app with AOS animations",
-    img: coffee,
+    title: "Landing Page Stract",
+    description: "A landing page with AOS animations",
+    img: stract,
     links: [
       {
         name: "Webpage",
-        url: "https://coffee-app-animated.vercel.app/",
+        url: "https://landing-page-stract.vercel.app/",
       },
       {
         name: "Github",
-        url: "https://github.com/yunsturann/web-dev-projects/tree/main/08-coffee-app",
+        url: "https://github.com/yunsturann/web-dev-projects/tree/main/27-landing-page-stract",
       },
     ],
   },
