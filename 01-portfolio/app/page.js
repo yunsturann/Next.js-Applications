@@ -1,9 +1,9 @@
 // ** Custom Components
 import HeroSection from "@/components/HeroSection";
-import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/about";
 import ContactSection from "@/components/contact";
 import Testimonial from "@/components/home/Testimonial";
+import ProjectsSection from "@/components/projects-section";
 
 export default function Home() {
   return (

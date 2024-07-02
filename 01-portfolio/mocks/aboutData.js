@@ -9,7 +9,7 @@ export const aboutSkillsData = [
   },
   {
     title: "react",
-    ratio: 60,
+    ratio: 70,
   },
   {
     title: "Javascript",
@@ -17,11 +17,11 @@ export const aboutSkillsData = [
   },
   {
     title: "Next.js",
-    ratio: 60,
+    ratio: 75,
   },
   {
     title: "SQL",
-    ratio: 70,
+    ratio: 50,
   },
   {
     title: "Tailwind",

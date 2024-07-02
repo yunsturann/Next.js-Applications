@@ -11,6 +11,14 @@
   }
 }
 
+.my_button {
+  @apply p-2 md:p-4 px-3 md:px-6 text-center text-white text-lg  md:text-xl font-semibold tracking-wider rounded-xl transition duration-300;
+}
+
+.my_input {
+  @apply outline-none focus:outline-blue-100 focus:outline-offset-1 border-2 border-gray-500 focus:border-blue-400 p-4 tracking-wider rounded-xl transition duration-300;
+}
+
 html {
   scroll-behavior: smooth;
 }

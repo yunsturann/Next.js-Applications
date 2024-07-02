@@ -5,20 +5,22 @@ import Link from "next/link";
 // icons
 import { FaCode, FaArrowRight } from "react-icons/fa6";
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ viewAll = false }) => {
+  const filteredData = viewAll ? projectsData : projectsData.slice(0, 6);
+
   return (
     <section className="py-6 md:py-16">
       <div className="container mx-auto space-y-6 md:space-y-12">
         {/* Section title */}
         <h2 className="section-title">My Projects</h2>
-        {/* Section Content*/}
 
-        <div className="flex flex-wrap gap-4  justify-center">
+        {/* Section Content*/}
+        <div className="flex flex-wrap gap-4 justify-center">
           {/* Projects */}
-          {projectsData.map((project) => (
+          {filteredData.map((project, index) => (
             <article
-              key={project.id}
-              className="group w-[14rem] h-[20rem] sm:w-[18rem] sm:h-[24rem] flex flex-col justify-between rounded-md relative overflow-hidden"
+              key={index}
+              className="group w-[14rem] h-[20rem] sm:w-[18rem] sm:h-[24rem] flex flex-col justify-between rounded-md relative overflow-hidden shadow-md shadow-gray-200"
             >
               {/* Project Image */}
               <Image
@@ -59,6 +61,17 @@ const ProjectsSection = () => {
             </article>
           ))}
         </div>
+        {/* Show More */}
+        {!viewAll && (
+          <div className="flex justify-center">
+            <Link
+              href={"/projects"}
+              className="my_button bg-gray-950 hover:bg-gray-800 text-white"
+            >
+              Show More
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

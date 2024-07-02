@@ -50,7 +50,7 @@ const Form = () => {
         placeholder="Your name"
         value={formData.name}
         onChange={onChange}
-        className="outline-none focus:outline-blue-100 focus:outline-offset-1 border-2 border-gray-500 focus:border-blue-400 p-4 tracking-wider rounded-xl transition duration-300"
+        className="my_input"
         maxLength={100}
         required
       />
@@ -61,7 +61,7 @@ const Form = () => {
         placeholder="Your email"
         value={formData.email}
         onChange={onChange}
-        className="outline-none focus:outline-blue-100 focus:outline-offset-1 border-2 border-gray-500 focus:border-blue-400 p-4 tracking-wider rounded-xl transition duration-300"
+        className="my_input"
         maxLength={100}
         required
       />
@@ -72,7 +72,7 @@ const Form = () => {
         placeholder="Subject"
         value={formData.subject}
         onChange={onChange}
-        className="outline-none focus:outline-blue-100 focus:outline-offset-1 border-2 border-gray-500 focus:border-blue-400 p-4 tracking-wider rounded-xl transition duration-300"
+        className="my_input"
         maxLength={100}
         required
       />
@@ -88,7 +88,7 @@ const Form = () => {
       ></textarea>
       <button
         type="submit"
-        className=" bg-rose-500 hover:bg-gega-red p-2 md:p-4 px-3 md:px-6 text-center text-white text-lg  md:text-xl font-semibold tracking-wider rounded-xl transition duration-300"
+        className=" my_button bg-rose-500 hover:bg-gega-red text-white "
       >
         CONTACT ME
       </button>

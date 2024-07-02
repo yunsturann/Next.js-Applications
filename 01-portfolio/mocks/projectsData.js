@@ -4,12 +4,27 @@ import miniBlog from "../public/assets/images/mini-blog.png";
 import stract from "../public/assets/images/stract.png";
 import turanflix from "../public/assets/images/turanflix.png";
 import formStepper from "../public/assets/images/formStepper.png";
+import chira from "../public/assets/images/chira.png";
 
 export const projectsData = [
   {
-    id: 0,
+    title: "Chira",
+    description: "A fullstack app to grasp dnd and reusable components",
+    img: chira,
+    links: [
+      {
+        name: "Webpage",
+        url: "https://chira.vercel.app/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/yunsturann/chira-todo-management",
+      },
+    ],
+  },
+  {
     title: "Turanflix",
-    description: "A fullstack movie app with Next.js, Tailwind and MongoDB.",
+    description: "A fullstack movie app with Next.js, Tailwind and MongoDB",
     img: turanflix,
     links: [
       {
@@ -23,10 +38,9 @@ export const projectsData = [
     ],
   },
   {
-    id: 1,
-    title: "Old Website",
+    title: "My Old Website",
     description:
-      "This is my static website. Includes my js, css, html projects.",
+      "This is my static website. Includes my js, css, html projects",
     img: website,
     links: [
       { name: "Webpage", url: "https://yunsturann.github.io/website/" },
@@ -34,7 +48,6 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
     title: "Landing Page Stract",
     description: "A landing page with AOS animations",
     img: stract,
@@ -50,7 +63,6 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
     title: "Interactive Card",
     description: "I used hook-form in details with zod validation",
     img: interactiveCard,
@@ -66,9 +78,8 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
     title: "Form Stepper",
-    description: "A multi-step form with zod validation and useContext.",
+    description: "A multi-step form with zod validation and useContext",
     img: formStepper,
     links: [
       {
@@ -82,7 +93,6 @@ export const projectsData = [
     ],
   },
   {
-    id: 5,
     title: "Mini Blog",
     description: "To learn CRUD Operations with Mongoose & NEXT",
     img: miniBlog,
