@@ -5,8 +5,25 @@ import stract from "../public/assets/images/stract.png";
 import turanflix from "../public/assets/images/turanflix.png";
 import formStepper from "../public/assets/images/formStepper.png";
 import chira from "../public/assets/images/chira.png";
+import whatsapp from "../public/assets/images/whatsappClone.png";
 
 export const projectsData = [
+  {
+    title: "Whatsapp Web Clone",
+    description: "To develop a large-scale application",
+    img: whatsapp,
+    links: [
+      {
+        name: "Webpage",
+        url: "https://new-whatsapp-web-clone.vercel.app/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/yunsturann/whatsapp-clone",
+      },
+    ],
+  },
+
   {
     title: "Chira",
     description: "A fullstack app to grasp dnd and reusable components",
@@ -22,6 +39,7 @@ export const projectsData = [
       },
     ],
   },
+
   {
     title: "Turanflix",
     description: "A fullstack movie app with Next.js, Tailwind and MongoDB",
@@ -62,21 +80,7 @@ export const projectsData = [
       },
     ],
   },
-  {
-    title: "Interactive Card",
-    description: "I used hook-form in details with zod validation",
-    img: interactiveCard,
-    links: [
-      {
-        name: "Webpage",
-        url: "https://my-interactive-card.vercel.app/",
-      },
-      {
-        name: "Github",
-        url: "https://github.com/yunsturann/web-dev-projects/tree/main/14-interactive-card",
-      },
-    ],
-  },
+
   {
     title: "Form Stepper",
     description: "A multi-step form with zod validation and useContext",
@@ -89,6 +93,21 @@ export const projectsData = [
       {
         name: "Github",
         url: "https://github.com/yunsturann/web-dev-projects/tree/main/10-multi-step-form",
+      },
+    ],
+  },
+  {
+    title: "Interactive Card",
+    description: "I used hook-form in details with zod validation",
+    img: interactiveCard,
+    links: [
+      {
+        name: "Webpage",
+        url: "https://my-interactive-card.vercel.app/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/yunsturann/web-dev-projects/tree/main/14-interactive-card",
       },
     ],
   },
