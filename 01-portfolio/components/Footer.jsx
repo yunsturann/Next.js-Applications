@@ -19,7 +19,7 @@ const Footer = () => {
           </Link>
           <div>
             <p className="text-sm md:text-lg ">
-              2023 Yunus No &copy; COPYRIGHT
+              2025 Yunus No &copy; COPYRIGHT
             </p>
           </div>
         </div>

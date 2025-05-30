@@ -1,3 +1,4 @@
+"use client";
 import { projectsData } from "@/mocks/projectsData";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,8 +19,10 @@ const ProjectsSection = ({ viewAll = false }) => {
         <div className="flex flex-wrap gap-4 justify-center">
           {/* Projects */}
           {filteredData.map((project, index) => (
-            <article
+            <Link
               key={index}
+              href={project.links[0].url}
+              target="_blank"
               className="group w-[14rem] h-[20rem] sm:w-[18rem] sm:h-[24rem] flex flex-col justify-between rounded-md relative overflow-hidden shadow-md shadow-gray-200"
             >
               {/* Project Image */}
@@ -49,6 +52,7 @@ const ProjectsSection = ({ viewAll = false }) => {
                     <Link
                       key={index}
                       href={item.url}
+                      onClick={(e) => e.stopPropagation()}
                       className="p-2 hover:text-gega-melon"
                       target="_blank"
                       aria-label={project.title + " " + item.name}
@@ -58,7 +62,7 @@ const ProjectsSection = ({ viewAll = false }) => {
                   ))}
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         {/* Show More */}
