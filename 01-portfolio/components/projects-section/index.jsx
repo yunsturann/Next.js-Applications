@@ -1,10 +1,9 @@
-"use client";
 import { projectsData } from "@/mocks/projectsData";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
-// icons
-import { FaCode, FaArrowRight } from "react-icons/fa6";
+const ProjectLinks = dynamic(() => import("./ProjectLinks"), { ssr: false });
 
 const ProjectsSection = ({ viewAll = false }) => {
   const filteredData = viewAll ? projectsData : projectsData.slice(0, 6);
@@ -47,20 +46,7 @@ const ProjectsSection = ({ viewAll = false }) => {
                   {project.description}
                 </p>
                 {/* Project Links*/}
-                <div className="flex space-x-4 opacity-0 group-hover:opacity-100 group-hover:mb-2  transition-all duration-500">
-                  {project.links.map((item, index) => (
-                    <Link
-                      key={index}
-                      href={item.url}
-                      onClick={(e) => e.stopPropagation()}
-                      className="p-2 hover:text-gega-melon"
-                      target="_blank"
-                      aria-label={project.title + " " + item.name}
-                    >
-                      {item.name === "Webpage" ? <FaArrowRight /> : <FaCode />}
-                    </Link>
-                  ))}
-                </div>
+                <ProjectLinks links={project.links} />
               </div>
             </Link>
           ))}
